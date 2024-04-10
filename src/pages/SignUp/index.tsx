@@ -5,33 +5,69 @@ import {
   ScrollView,
   TouchableOpacity,
   Text,
+  Image,
 } from 'react-native';
-import {Gap, TextInput} from '../../components';
+import {Gap, PageHeader, TextInput} from '../../components';
 
-const SignUp = () => {
+const SignUp = ({navigation}) => {
   return (
     <ScrollView style={styles.container}>
+      <PageHeader
+        label="Sign Up"
+        backButton={true}
+        onPress={() => navigation.goBack()}
+      />
       <Gap height={24} />
       <View style={styles.contentWrapper}>
-        <View style={styles.profileContainer}>
-          <View style={styles.profile}>
-            <View style={styles.addPhoto}>
-              <TouchableOpacity>
-                <Text style={styles.addPhotoLabel}>Add Photo</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
         <Gap height={26} />
-        <TextInput label="Full Name" placeholder="Type your full name" />
+        <TextInput label="First Name" placeholder="Type your first name" />
         <Gap height={16} />
-        <TextInput
-          label="Email Address"
-          placeholder="Type your email address"
-        />
+        <TextInput label="Last Name" placeholder="Type your last name" />
         <Gap height={16} />
-        <TextInput label="Password" placeholder="Type your password" />
+        <TextInput label="Phone Number" placeholder="Type your phone number" />
         <Gap height={24} />
+        <TextInput label="Email" placeholder="Type your email" />
+        <Gap height={24} />
+        <TextInput label="Address" placeholder="Type your address" />
+        <Gap height={24} />
+        <TextInput
+          label="Password"
+          placeholder="Type your password"
+          secureTextEntry
+        />
+        <Gap height={24} />
+        <TextInput
+          label="Confirm Password"
+          placeholder="Confirm password"
+          secureTextEntry
+        />
+        <Gap height={32} />
+        <TouchableOpacity
+          style={styles.signUpButton}
+          onPress={() => navigation.navigate('SignIn')}>
+          <Text style={styles.signUpButtonText}>Sign Up</Text>
+        </TouchableOpacity>
+        <Gap height={24} />
+        <View style={styles.socialLoginContainer}>
+          <TouchableOpacity style={styles.socialLoginButton}>
+            <Image
+              source={require('../../assets/images/google-icon.png')}
+              style={styles.socialLoginIcon}
+            />
+            <Text style={styles.socialLoginButtonText}>
+              Continue with Google
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.socialLoginButton}>
+            <Image
+              source={require('../../assets/images/facebook-icon.png')}
+              style={styles.socialLoginIcon}
+            />
+            <Text style={styles.socialLoginButtonText}>
+              Continue with Facebook
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </ScrollView>
   );
@@ -48,33 +84,43 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 24,
   },
-  profileContainer: {
-    marginTop: 26,
+  signUpButton: {
+    backgroundColor: '#76B85E',
+    padding: 15,
+    borderRadius: 25,
     alignItems: 'center',
+    marginBottom: -20,
   },
-  profile: {
-    backgroundColor: '#FFFFFF',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: 110,
-    width: 110,
-    borderRadius: 110 / 2,
-    borderWidth: 1,
-    borderColor: '#8D92A3',
-    borderStyle: 'dashed',
+  signUpButtonText: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: 'bold',
   },
-  addPhoto: {
-    backgroundColor: '#F0F0F0',
-    width: 90,
-    height: 90,
-    borderRadius: 90 / 2,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  addPhotoLabel: {
-    fontFamily: 'Poppins-Light',
-    fontSize: 14,
-    width: 40,
+  socialLoginText: {
+    fontSize: 16,
     textAlign: 'center',
+    marginBottom: 10,
+  },
+  socialLoginContainer: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  socialLoginButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 8,
+    borderRadius: 20,
+    backgroundColor: '#fff',
+    borderWidth: 1,
+    marginTop: 10,
+  },
+  socialLoginIcon: {
+    width: 24,
+    height: 24,
+    marginRight: 10,
+  },
+  socialLoginButtonText: {
+    fontSize: 16,
   },
 });
