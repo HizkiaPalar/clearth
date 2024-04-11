@@ -13,6 +13,7 @@ const SignUp = ({navigation}) => {
   return (
     <ScrollView style={styles.container}>
       <PageHeader
+        type="withPhoto"
         label="Sign Up"
         backButton={true}
         onPress={() => navigation.goBack()}

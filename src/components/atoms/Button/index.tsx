@@ -30,7 +30,8 @@ const index = ({
 export default index;
 
 const styles = StyleSheet.create({
-  container: backgroundColor => ({
+  container: 
+    backgroundColor => ({
     backgroundColor: backgroundColor,
     paddingVertical: 12,
     borderRadius: 8,

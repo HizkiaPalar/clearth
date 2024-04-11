@@ -1,9 +1,14 @@
 import React from 'react';
 import {View, Text, Image, StyleSheet, ScrollView} from 'react-native';
+import {PageHeader} from '../../components';
 
 const Home = () => {
   return (
     <ScrollView>
+      <PageHeader
+        type="withSB"
+        backButton={false} // Adjust back button visibility
+      />
       <View style={styles.cardRow}>
         <View style={styles.card}>
           <View style={styles.cardImage}>
@@ -73,6 +78,15 @@ const Home = () => {
 };
 
 const styles = StyleSheet.create({
+  searchBar: {
+    backgroundColor: '#f0f0f0',
+    padding: 10,
+    borderRadius: 5,
+    marginBottom: 10,
+  },
+  searchInput: {
+    fontSize: 16,
+  },
   cardRow: {
     flexDirection: 'row',
     justifyContent: 'space-between', // Distribute cards evenly within row
@@ -101,18 +115,13 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   cardTitle: {
-    fontWeight: 'bold',
     fontSize: 16,
-  },
-  cardDate: {
-    fontSize: 12,
-    fontWeight: '300',
-    color: '#999',
+    fontWeight: 'bold',
+    marginBottom: 5,
   },
   cardDescription: {
     fontSize: 14,
-    color: '#666', // Adjust text color as needed
-    marginBottom: 10, // Add spacing below description
+    color: '#444444',
   },
 });
 

@@ -12,7 +12,7 @@ import {Gap, PageHeader, TextInput} from '../../components';
 const SignIn = ({navigation}) => {
   return (
     <ScrollView style={styles.container}>
-      <PageHeader type="withPhoto" label="SignIn" backButton={false} />
+      <PageHeader label="Sign In" backButton={false} />
       <Gap height={54} />
       <View style={styles.contentWrapper}>
         <Gap height={26} />
