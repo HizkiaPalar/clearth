@@ -23,9 +23,9 @@ const styles = StyleSheet.create({
     fontSize: 14,
     borderRadius: 10,
     padding: 15,
-    borderBottomColor: '#000',
-    shadowRadius: 0.5,
-    shadowOpacity: 0.2,
-    elevation: 6.5,
+    borderBottomColor: 'rgba(0, 0, 0, 0.25)',
+    borderBottomWidth: 5,
+    borderLeftWidth: 5,
+    borderLeftColor: 'rgba(0, 0, 0, 0.25)',
   },
 });
