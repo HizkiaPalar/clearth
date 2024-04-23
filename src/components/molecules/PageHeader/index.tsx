@@ -3,6 +3,7 @@ import React from 'react';
 import {Button} from '../../atoms';
 import {Logo2} from '../../../assets/images';
 import SearchBar from '../../atoms/SearchBar';
+import {LinearGradient} from 'react-native-svg';
 
 const PageHeader = ({label, backButton, onPress, type}) => {
   if (type === 'withPhoto') {
@@ -43,7 +44,6 @@ export default PageHeader;
 
 const styles = StyleSheet.create({
   containerWithPhoto: {
-    backgroundColor: '#c3ffae',
     paddingHorizontal: 24,
     paddingVertical: 10,
     alignItems: 'center',
