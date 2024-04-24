@@ -75,31 +75,4 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
   },
-  socialLoginText: {
-    fontSize: 16,
-    textAlign: 'center',
-    marginBottom: 10,
-  },
-  socialLoginContainer: {
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  socialLoginButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: 8,
-    borderRadius: 20,
-    backgroundColor: '#fff',
-    borderWidth: 1,
-    marginTop: 10,
-  },
-  socialLoginIcon: {
-    width: 24,
-    height: 24,
-    marginRight: 10,
-  },
-  socialLoginButtonText: {
-    fontSize: 16,
-  },
 });

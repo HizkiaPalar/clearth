@@ -28,26 +28,9 @@ const SignIn = ({navigation}) => {
         <Gap height={30} />
         <TouchableOpacity
           style={styles.signInButton}
-          onPress={() => navigation.navigate('Home')}>
+          onPress={() => navigation.navigate('buttontab')}>
           <Text style={styles.signInButtonText}>Sign In</Text>
         </TouchableOpacity>
-        <Gap height={20} />
-        <View style={styles.socialLoginContainer}>
-          <TouchableOpacity style={styles.socialLoginButton}>
-            <Image
-              source={require('../../assets/images/google-icon.png')}
-              style={styles.socialLoginIcon}
-            />
-            <Text style={styles.socialLoginText}>Continue with Google</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.socialLoginButton}>
-            <Image
-              source={require('../../assets/images/facebook-icon.png')}
-              style={styles.socialLoginIcon}
-            />
-            <Text style={styles.socialLoginText}>Continue with Facebook</Text>
-          </TouchableOpacity>
-        </View>
         <Gap height={20} />
       </View>
     </ScrollView>
@@ -64,6 +47,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     flex: 1,
     paddingHorizontal: 24,
+    paddingTop: 60,
   },
   signInButton: {
     backgroundColor: '#76B85E',
@@ -80,27 +64,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: 'center',
     marginBottom: 10,
-  },
-  socialLoginContainer: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column',
-  },
-  socialLoginButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: 8,
-    borderRadius: 20,
-    backgroundColor: '#fff',
-    borderWidth: 1,
-  },
-  socialLoginIcon: {
-    width: 24,
-    height: 24,
-    marginRight: 10,
-  },
-  socialLoginText: {
-    fontSize: 16,
   },
   signupWrapper: {
     flexDirection: 'row',
