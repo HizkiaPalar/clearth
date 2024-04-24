@@ -13,7 +13,7 @@ const SignIn = ({navigation}) => {
   return (
     <ScrollView style={styles.container}>
       <PageHeader label="Sign In" backButton={false} />
-      <Gap height={54} />
+      <Gap height={12} />
       <View style={styles.contentWrapper}>
         <Gap height={26} />
         <TextInput label="Email" placeholder="Enter your email" />
@@ -32,22 +32,6 @@ const SignIn = ({navigation}) => {
           <Text style={styles.signInButtonText}>Sign In</Text>
         </TouchableOpacity>
         <Gap height={20} />
-        <View style={styles.socialLoginContainer}>
-          <TouchableOpacity style={styles.socialLoginButton}>
-            <Image
-              source={require('../../assets/images/google-icon.png')}
-              style={styles.socialLoginIcon}
-            />
-            <Text style={styles.socialLoginText}>Continue with Google</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.socialLoginButton}>
-            <Image
-              source={require('../../assets/images/facebook-icon.png')}
-              style={styles.socialLoginIcon}
-            />
-            <Text style={styles.socialLoginText}>Continue with Facebook</Text>
-          </TouchableOpacity>
-        </View>
         <Gap height={20} />
       </View>
     </ScrollView>
