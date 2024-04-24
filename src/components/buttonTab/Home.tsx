@@ -5,11 +5,11 @@ import {PageHeader} from '../molecules';
 
 const Home = () => {
   return (
-    <View style={{ flex: 1}}>
+    <View style={{flex: 1}}>
       <View>
         <PageHeader type="withSB" backButton={false} />
       </View>
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <View style={styles.container}>
         <Box title="Educate" />
         <Box title="Schedule" />
         <Box title="Reporting" />
@@ -20,16 +20,8 @@ const Home = () => {
 
 const Box = ({title}) => {
   return (
-    <View
-      style={{
-        width: '80%',
-        height: 100,
-        borderWidth: 1,
-        borderColor: 'gray',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
-      <Text style={{fontSize: 18}}>{title}</Text>
+    <View style={styles.containerBox}>
+      <Text style={styles.textBox}>{title}</Text>
     </View>
   );
 };
@@ -71,6 +63,24 @@ const Bt = () => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  },
+  containerBox: {
+    width: '80%',
+    height: 100,
+    borderWidth: 1,
+    borderColor: 'gray',
+    alignItems: 'left',
+    paddingLeft: 15,
+    paddingTop: 11,
+  },
+  textBox: {
+    fontSize: 20,
+    fontFamily: 'Poppins-Regular',
+  },
   searchBar: {
     backgroundColor: '#f0f0f0',
     padding: 10,
