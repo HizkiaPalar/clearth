@@ -43,6 +43,7 @@ export default PageHeader;
 
 const styles = StyleSheet.create({
   containerWithPhoto: {
+    backgroundColor: '#c3ffae',
     paddingHorizontal: 24,
     paddingVertical: 10,
     alignItems: 'center',
