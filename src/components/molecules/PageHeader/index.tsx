@@ -3,7 +3,6 @@ import React from 'react';
 import {Button} from '../../atoms';
 import {Logo2} from '../../../assets/images';
 import SearchBar from '../../atoms/SearchBar';
-import {LinearGradient} from 'react-native-svg';
 
 const PageHeader = ({label, backButton, onPress, type}) => {
   if (type === 'withPhoto') {
