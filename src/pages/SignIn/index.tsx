@@ -5,7 +5,6 @@ import {
   Text,
   View,
   TouchableOpacity,
-  Image,
 } from 'react-native';
 import {Gap, PageHeader, TextInput} from '../../components';
 
@@ -13,7 +12,7 @@ const SignIn = ({navigation}) => {
   return (
     <ScrollView style={styles.container}>
       <PageHeader label="Sign In" backButton={false} />
-      <Gap height={12} />
+      <Gap height={54} />
       <View style={styles.contentWrapper}>
         <Gap height={26} />
         <TextInput label="Email" placeholder="Enter your email" />
@@ -32,7 +31,6 @@ const SignIn = ({navigation}) => {
           <Text style={styles.signInButtonText}>Sign In</Text>
         </TouchableOpacity>
         <Gap height={20} />
-        <Gap height={20} />
       </View>
     </ScrollView>
   );
@@ -48,6 +46,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     flex: 1,
     paddingHorizontal: 24,
+    paddingTop: 60,
   },
   signInButton: {
     backgroundColor: '#76B85E',
@@ -64,27 +63,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: 'center',
     marginBottom: 10,
-  },
-  socialLoginContainer: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column',
-  },
-  socialLoginButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: 8,
-    borderRadius: 20,
-    backgroundColor: '#fff',
-    borderWidth: 1,
-  },
-  socialLoginIcon: {
-    width: 24,
-    height: 24,
-    marginRight: 10,
-  },
-  socialLoginText: {
-    fontSize: 16,
   },
   signupWrapper: {
     flexDirection: 'row',

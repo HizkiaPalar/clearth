@@ -1,83 +1,96 @@
 import React from 'react';
-import {View, Text, Image, StyleSheet, ScrollView} from 'react-native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {PageHeader} from '../../components';
 
-const Home = () => {
+const Home = ({navigation}) => {
   return (
-    <ScrollView>
-      <PageHeader
-        type="withSB"
-        backButton={false} // Adjust back button visibility
+    <View style={{flex: 1}}>
+      <View>
+        <PageHeader type="withSB" backButton={false} />
+      </View>
+      <View style={styles.container}>
+        <TouchableOpacity style={styles.containerBox}>
+          <Box title="Educate" />
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.containerBox}
+          onPress={() => navigation.navigate('Schedule')}>
+          <Box title="Schedule" />
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.containerBox}
+          onPress={() => navigation.navigate('Reporting2')}>
+          <Box title="Reporting" />
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+};
+
+const Box = ({title}) => {
+  return (
+    <View>
+      <Text style={styles.textBox}>{title}</Text>
+    </View>
+  );
+};
+
+const Screen2 = () => (
+  <View style={styles.screenContainer}>
+    <Text>Screen 2 Content</Text>
+  </View>
+);
+
+const Screen3 = () => (
+  <View style={styles.screenContainer}>
+    <Text>Screen 3 Content</Text>
+  </View>
+);
+
+const Tab = createBottomTabNavigator();
+
+const Bt = () => {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen
+        name="Home"
+        component={Home}
+        options={{headerShown: false, tabBarLabel: () => null}}
       />
-      <View style={styles.cardRow}>
-        <View style={styles.card}>
-          <View style={styles.cardImage}>
-            <Image
-              source={require('../../assets/images/Cards .png')} // Replace with your image
-              style={styles.image}
-            />
-          </View>
-          <View style={styles.cardContent}>
-            <Text style={styles.cardTitle}> Title </Text>
-            <Text style={styles.cardDescription}>
-              This is a brief description of the content in Card 1. It can
-              include key points or a summary.
-            </Text>
-          </View>
-        </View>
-        <View style={styles.card}>
-          <View style={styles.cardImage}>
-            <Image
-              source={require('../../assets/images/Cards .png')} // Replace with your image
-              style={styles.image}
-            />
-          </View>
-          <View style={styles.cardContent}>
-            <Text style={styles.cardTitle}> Title </Text>
-            <Text style={styles.cardDescription}>
-              This is a brief description of the content in Card 2. You can
-              tailor it to your specific information.
-            </Text>
-          </View>
-        </View>
-      </View>
-      <View style={styles.cardRow}>
-        <View style={styles.card}>
-          <View style={styles.cardImage}>
-            <Image
-              source={require('../../assets/images/Cards .png')} // Replace with your image
-              style={styles.image}
-            />
-          </View>
-          <View style={styles.cardContent}>
-            <Text style={styles.cardTitle}> Title </Text>
-            <Text style={styles.cardDescription}>
-              Fill in the content for Card 3 here, keeping it concise and
-              informative.
-            </Text>
-          </View>
-        </View>
-        <View style={styles.card}>
-          <View style={styles.cardImage}>
-            <Image
-              source={require('../../assets/images/Cards .png')} // Replace with your image
-              style={styles.image}
-            />
-          </View>
-          <View style={styles.cardContent}>
-            <Text style={styles.cardTitle}> Title </Text>
-            <Text style={styles.cardDescription}>
-              Create a compelling description for Card 4, grabbing the reader's
-              attention.
-            </Text>
-          </View>
-        </View>
-      </View>
-    </ScrollView>
+      <Tab.Screen
+        name="Screen2"
+        component={Screen2}
+        options={{headerShown: false, tabBarLabel: () => null}}
+      />
+      <Tab.Screen
+        name="Screen3"
+        component={Screen3}
+        options={{headerShown: false, tabBarLabel: () => null}}
+      />
+    </Tab.Navigator>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  },
+  containerBox: {
+    width: '80%',
+    height: 100,
+    borderWidth: 1,
+    borderColor: 'gray',
+    alignItems: 'left',
+    paddingLeft: 15,
+    paddingTop: 11,
+  },
+  textBox: {
+    fontSize: 20,
+    fontFamily: 'Poppins-Regular',
+  },
   searchBar: {
     backgroundColor: '#f0f0f0',
     padding: 10,
@@ -89,8 +102,9 @@ const styles = StyleSheet.create({
   },
   cardRow: {
     flexDirection: 'row',
-    justifyContent: 'space-between', // Distribute cards evenly within row
-    marginBottom: 20, // Add spacing between rows
+    justifyContent: 'space-between',
+    marginBottom: 20,
+    paddingTop: 25,
   },
   card: {
     backgroundColor: '#ffffff',
@@ -122,6 +136,9 @@ const styles = StyleSheet.create({
   cardDescription: {
     fontSize: 14,
     color: '#444444',
+  },
+  screenContainer: {
+    flex: 1,
   },
 });
 
