@@ -27,7 +27,7 @@ const SignIn = ({navigation}) => {
         <Gap height={30} />
         <TouchableOpacity
           style={styles.signInButton}
-          onPress={() => navigation.navigate('buttontab')}>
+          onPress={() => navigation.navigate('Home')}>
           <Text style={styles.signInButtonText}>Sign In</Text>
         </TouchableOpacity>
         <Gap height={20} />

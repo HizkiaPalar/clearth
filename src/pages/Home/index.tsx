@@ -1,14 +1,7 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  ScrollView,
-  TouchableOpacity,
-} from 'react-native';
-import {PageHeader} from '../molecules';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {PageHeader} from '../../components';
 
 const Home = ({navigation}) => {
   return (
@@ -20,12 +13,12 @@ const Home = ({navigation}) => {
         <TouchableOpacity style={styles.containerBox}>
           <Box title="Educate" />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.containerBox}>
-          <Box title="Schedule" />
-        </TouchableOpacity>
         <TouchableOpacity
           style={styles.containerBox}
           onPress={() => navigation.navigate('Schedule')}>
+          <Box title="Schedule" />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.containerBox}>
           <Box title="Reporting" />
         </TouchableOpacity>
       </View>
@@ -147,4 +140,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Bt;
+export default Home;
