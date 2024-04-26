@@ -18,7 +18,9 @@ const Home = ({navigation}) => {
           onPress={() => navigation.navigate('Schedule')}>
           <Box title="Schedule" />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.containerBox}>
+        <TouchableOpacity
+          style={styles.containerBox}
+          onPress={() => navigation.navigate('Reporting2')}>
           <Box title="Reporting" />
         </TouchableOpacity>
       </View>

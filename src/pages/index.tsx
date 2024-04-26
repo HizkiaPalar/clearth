@@ -3,4 +3,5 @@ import SignIn from './SignIn';
 import SignUp from './SignUp';
 import Schedule from './Schedule';
 import Home from './Home';
-export {Home, SplashScreen, SignIn, SignUp, Schedule};
+import Reporting2 from './Reporting2';
+export {Home, Reporting2, SplashScreen, SignIn, SignUp, Schedule};
