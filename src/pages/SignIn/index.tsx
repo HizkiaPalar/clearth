@@ -1,56 +1,26 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
   ScrollView,
   StyleSheet,
   Text,
   View,
   TouchableOpacity,
-  Image,
 } from 'react-native';
 import {Gap, PageHeader, TextInput} from '../../components';
-import {useNavigation} from '@react-navigation/native';
 
-const SignIn = () => {
-  const navigation = useNavigation();
-
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handlePressSignUp = () => {
-    navigation.navigate('SignUp');
-  };
-
-  const handleGoogleLogin = () => {
-    console.log('Sign in with Google');
-  };
-
-  const handleFacebookLogin = () => {
-    console.log('Sign in with Facebook');
-  };
-
+const SignIn = ({navigation}) => {
   return (
     <ScrollView style={styles.container}>
-      <PageHeader type="withPhoto" label="SignIn" backButton={false} />
+      <PageHeader label="Sign In" backButton={false} />
       <Gap height={54} />
       <View style={styles.contentWrapper}>
         <Gap height={26} />
-        <TextInput
-          label="Email"
-          placeholder="Enter your email"
-          value={email}
-          onChangeText={text => setEmail(text)}
-        />
+        <TextInput label="Email" placeholder="Enter your email" />
         <Gap height={26} />
-        <TextInput
-          label="Password"
-          placeholder="Enter your password"
-          secureTextEntry={true}
-          value={password}
-          onChangeText={text => setPassword(text)}
-        />
+        <TextInput label="Password" placeholder="Enter your password" />
         <View style={styles.signupWrapper}>
           <Text style={styles.text}>Don't have an account? </Text>
-          <TouchableOpacity onPress={handlePressSignUp}>
+          <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
             <Text style={styles.clickableText}>Sign Up</Text>
           </TouchableOpacity>
         </View>
@@ -60,27 +30,6 @@ const SignIn = () => {
           onPress={() => navigation.navigate('Home')}>
           <Text style={styles.signInButtonText}>Sign In</Text>
         </TouchableOpacity>
-        <Gap height={20} />
-        <View style={styles.socialLoginContainer}>
-          <TouchableOpacity
-            style={styles.socialLoginButton}
-            onPress={handleGoogleLogin}>
-            <Image
-              source={require('../../assets/images/google-icon.png')}
-              style={styles.socialLoginIcon}
-            />
-            <Text style={styles.socialLoginText}>Continue with Google</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.socialLoginButton}
-            onPress={handleFacebookLogin}>
-            <Image
-              source={require('../../assets/images/facebook-icon.png')}
-              style={styles.socialLoginIcon}
-            />
-            <Text style={styles.socialLoginText}>Continue with Facebook</Text>
-          </TouchableOpacity>
-        </View>
         <Gap height={20} />
       </View>
     </ScrollView>
@@ -97,6 +46,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     flex: 1,
     paddingHorizontal: 24,
+    paddingTop: 60,
   },
   signInButton: {
     backgroundColor: '#76B85E',
@@ -114,26 +64,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 10,
   },
-  socialLoginContainer: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column',
-  },
-  socialLoginButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: 8,
-    borderRadius: 8,
-    backgroundColor: '#fff',
-  },
-  socialLoginIcon: {
-    width: 24,
-    height: 24,
-    marginRight: 10,
-  },
-  socialLoginText: {
-    fontSize: 16,
-  },
   signupWrapper: {
     flexDirection: 'row',
     justifyContent: 'center',
@@ -142,13 +72,13 @@ const styles = StyleSheet.create({
     paddingLeft: 125,
   },
   text: {
-    fontSize: 16,
+    fontSize: 14,
     marginRight: 10,
     fontWeight: 'bold',
     color: '#000',
   },
   clickableText: {
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: 'bold',
     color: '#000',
     textDecorationLine: 'underline',
