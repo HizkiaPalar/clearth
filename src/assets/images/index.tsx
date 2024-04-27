@@ -1,7 +1,4 @@
 import Logo2 from './Logo2.png';
-import eyes from './eyes.png';
-import eyesclosed from './eyesclosed.png';
-import facebook from './facebook-icon.png';
-import google from './google-icon.png';
-import Cards from './Cards .png';
-export {Logo2, eyes, eyesclosed, Cards, facebook, google};
+import Line from './Line.png';
+import Star from './Star.png';
+export {Logo2, Line, Star};

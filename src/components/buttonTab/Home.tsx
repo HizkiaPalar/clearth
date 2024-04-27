@@ -1,135 +1,210 @@
 import React from 'react';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {View, Text, Image, StyleSheet, ScrollView} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  ImageBackground,
+  TouchableOpacity,
+} from 'react-native';
 import {PageHeader} from '../molecules';
 
-const Home = () => {
+const Home = ({navigation}) => {
   return (
-    <View style={{flex: 1}}>
+    <View style={styles.container}>
       <View>
         <PageHeader type="withSB" backButton={false} />
       </View>
-      <View style={styles.container}>
-        <Box title="Educate" />
-        <Box title="Schedule" />
-        <Box title="Reporting" />
+      <View style={styles.contentContainer}>
+        <View style={styles.tcontainer}>
+          <Text style={styles.theader1}>Hey, Riana!</Text>
+          <Text style={styles.theader2}>Save our planet, start</Text>
+          <Text style={styles.theader3}>sorting your waste </Text>
+        </View>
+        <View style={styles.weeklyTargetContainer}>
+          <Text style={styles.weeklyTarget1}>WEEKLY TARGET</Text>
+          <Text style={styles.weeklyTarget2}>300</Text>
+          <Text style={styles.weeklyTarget3}>YOUR POINTS</Text>
+          <View style={styles.imageContainer}>
+            <Image
+              style={styles.image}
+              source={require('../../assets/images/Line.png')}
+            />
+            <Image
+              style={styles.image2}
+              source={require('../../assets/images/Star.png')}
+            />
+            <Text style={styles.num}>10/100</Text>
+          </View>
+        </View>
+      </View>
+      <View style={styles.bgContainer}>
+        <ImageBackground
+          style={styles.imageWithText}
+          source={require('../../assets/images/bg.png')}>
+          <Text style={styles.textImage}>Education</Text>
+          <Text style={styles.textImagebottom}>let's learn to be wiser !</Text>
+          <TouchableOpacity
+            style={styles.buttonContainer}
+            onPress={() => navigation.navigate('Education')}>
+            <Text style={styles.buttonText}>Start</Text>
+          </TouchableOpacity>
+        </ImageBackground>
+        <ImageBackground
+          style={styles.imageWithText}
+          source={require('../../assets/images/bg.png')}>
+          <Text style={styles.textImage}>Schedule</Text>
+          <Text style={styles.textImagebottom}>schedule it so you don't</Text>
+          <Text style={styles.textImagebottom}>forget !</Text>
+          <TouchableOpacity
+            style={styles.buttonContainer}
+            onPress={() => navigation.navigate('Education')}>
+            <Text style={styles.buttonText1}>Add</Text>
+          </TouchableOpacity>
+        </ImageBackground>
+        <ImageBackground
+          style={styles.imageWithText}
+          source={require('../../assets/images/bg.png')}>
+          <Text style={styles.textImage}>Reporting</Text>
+          <Text style={styles.textImagebottom}>report illegal trash bins</Text>
+          <Text style={styles.textImagebottom}>around you !</Text>
+          <TouchableOpacity
+            style={styles.buttonContainer}
+            onPress={() => navigation.navigate('Education')}>
+            <Text style={styles.buttonText1}>Report</Text>
+          </TouchableOpacity>
+        </ImageBackground>
       </View>
     </View>
-  );
-};
-
-const Box = ({title}) => {
-  return (
-    <View style={styles.containerBox}>
-      <Text style={styles.textBox}>{title}</Text>
-    </View>
-  );
-};
-
-const Screen2 = () => (
-  <View style={styles.screenContainer}>
-    <Text>Screen 2 Content</Text>
-  </View>
-);
-
-const Screen3 = () => (
-  <View style={styles.screenContainer}>
-    <Text>Screen 3 Content</Text>
-  </View>
-);
-
-const Tab = createBottomTabNavigator();
-
-const Bt = () => {
-  return (
-    <Tab.Navigator>
-      <Tab.Screen
-        name="Home"
-        component={Home}
-        options={{headerShown: false, tabBarLabel: () => null}}
-      />
-      <Tab.Screen
-        name="Screen2"
-        component={Screen2}
-        options={{headerShown: false, tabBarLabel: () => null}}
-      />
-      <Tab.Screen
-        name="Screen3"
-        component={Screen3}
-        options={{headerShown: false, tabBarLabel: () => null}}
-      />
-    </Tab.Navigator>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'space-around',
-    alignItems: 'center',
   },
-  containerBox: {
-    width: '80%',
-    height: 100,
-    borderWidth: 1,
-    borderColor: 'gray',
-    alignItems: 'left',
-    paddingLeft: 15,
-    paddingTop: 11,
-  },
-  textBox: {
-    fontSize: 20,
-    fontFamily: 'Poppins-Regular',
-  },
-  searchBar: {
-    backgroundColor: '#f0f0f0',
-    padding: 10,
-    borderRadius: 5,
-    marginBottom: 10,
-  },
-  searchInput: {
-    fontSize: 16,
-  },
-  cardRow: {
+  contentContainer: {
+    flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 20,
-    paddingTop: 25,
   },
-  card: {
-    backgroundColor: '#ffffff',
-    width: 167,
-    height: 'auto',
-    borderWidth: 1,
-    borderRadius: 21,
-    borderColor: 'black',
+  tcontainer: {
+    marginLeft: 30,
+    marginRight: 22,
+    marginTop: 34,
   },
-  cardImage: {
-    height: 97,
-    width: 167,
-    borderTopLeftRadius: 21,
-    borderTopRightRadius: 21,
-    overflow: 'hidden',
-  },
-  image: {
-    width: '100%',
-    height: '100%',
-  },
-  cardContent: {
-    padding: 10,
-  },
-  cardTitle: {
-    fontSize: 16,
+  theader1: {
+    fontSize: 30,
     fontWeight: 'bold',
     marginBottom: 5,
+    fontFamily: 'Poppins-Regular',
+    color: 'black',
   },
-  cardDescription: {
+  theader2: {
     fontSize: 14,
-    color: '#444444',
+    color: 'black',
+    fontFamily: 'Poppins-Regular',
   },
-  screenContainer: {
-    flex: 1,
+  theader3: {
+    fontSize: 14,
+    color: 'black',
+    marginBottom: 20,
+    fontFamily: 'Poppins-Regular',
+  },
+  weeklyTargetContainer: {
+    marginTop: 31,
+    marginRight: 35,
+    backgroundColor: '#51F9D7',
+    height: 131,
+    width: 141,
+    borderRadius: 16,
+    marginLeft: 22,
+  },
+  weeklyTarget1: {
+    color: 'black',
+    fontSize: 15,
+    fontFamily: 'Poppins-Regular',
+    paddingTop: 8,
+    paddingHorizontal: 12,
+  },
+  weeklyTarget2: {
+    color: 'black',
+    fontSize: 20,
+    fontFamily: 'Poppins-Regular',
+    paddingHorizontal: 12,
+    textAlign: 'center',
+  },
+  weeklyTarget3: {
+    color: 'black',
+    fontSize: 10,
+    fontFamily: 'Poppins-Regular',
+    paddingHorizontal: 12,
+    textAlign: 'center',
+    paddingTop: -5,
+  },
+  imageContainer: {
+    position: 'relative',
+  },
+  image: {
+    marginVertical: 6.5,
+    marginHorizontal: 6.5,
+  },
+  image2: {
+    position: 'absolute',
+    top: -3,
+    left: 15,
+  },
+  bgContainer: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    marginBottom: 180,
+  },
+  imageWithText: {
+    marginBottom: 23,
+    width: 350,
+    height: 100,
+  },
+  textImage: {
+    color: 'black',
+    fontSize: 19,
+    fontFamily: 'Poppins-Regular',
+    textAlign: 'left',
+    left: 15,
+    top: 4,
+  },
+  textImagebottom: {
+    color: 'grey',
+    fontSize: 11,
+    fontFamily: 'Poppins-Regular',
+    textAlign: 'left',
+    left: 15,
+    bottom: 3,
+  },
+  buttonText: {
+    borderRadius: 10,
+    backgroundColor: '#51F9D7',
+    width: 69,
+    height: 22,
+    textAlign: 'center',
+    color: 'black',
+    top: 15,
+  },
+  buttonText1: {
+    borderRadius: 10,
+    backgroundColor: '#51F9D7',
+    width: 69,
+    height: 22,
+    textAlign: 'center',
+    color: 'black',
+  },
+  buttonContainer: {
+    left: 14,
+  },
+  num: {
+    textAlign: 'center',
+    fontSize: 20,
+    fontFamily: 'Poppins-Regular',
+    color: 'black',
   },
 });
 
-export default Bt;
+export default Home;
