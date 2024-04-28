@@ -43,6 +43,7 @@ export default PageHeader;
 
 const styles = StyleSheet.create({
   containerWithPhoto: {
+    backgroundColor: '#c3ffae',
     paddingHorizontal: 24,
     paddingVertical: 10,
     alignItems: 'center',
@@ -51,21 +52,21 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#c3ffae',
     paddingLeft: 24,
-    paddingVertical: 37,
+    paddingVertical: 20,
     flexDirection: 'row',
     alignItems: 'center',
-    marginLeft: -5,
+    marginLeft: -10,
   },
   label: {
-    fontFamily: 'Poppins-Medium',
-    fontSize: 22,
+    fontFamily: 'Poppins-Bold',
+    fontSize: 20,
     color: '#020202',
-    marginLeft: 95,
+    marginLeft: 100,
   },
   image: {
     width: 82,
     height: 75,
-    marginLeft: -30,
+    marginLeft: -25,
   },
   appTitle: {
     fontFamily: 'Poppins-Medium',
