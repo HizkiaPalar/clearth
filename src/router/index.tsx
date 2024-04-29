@@ -1,11 +1,12 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
+  AddSchedule,
+  Home,
+  Reporting2,
   SplashScreen,
   SignIn,
   SignUp,
-  Home,
-  Reporting2,
   Schedule,
 } from '../pages';
 
@@ -41,6 +42,11 @@ const index = () => {
       <Stack.Screen
         name="Reporting2"
         component={Reporting2}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="AddSchedule"
+        component={AddSchedule}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
