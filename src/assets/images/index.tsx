@@ -4,5 +4,7 @@ import eyesclosed from './eyesclosed.png';
 import facebook from './facebook-icon.png';
 import google from './google-icon.png';
 import Cards from './Cards .png';
-import Add from './Add.png'
-export {Logo2, eyes, eyesclosed, Cards, facebook, google, Add};
+import Add from './Add.png';
+import Report from './Report.png';
+import Tps from './Tps.png';
+export {Logo2, eyes, eyesclosed, Cards, facebook, google, Add, Report, Tps};
