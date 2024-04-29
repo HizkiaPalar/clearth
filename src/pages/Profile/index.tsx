@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {PageHeader} from '../../components';
 import {Image} from 'react-native-elements';
@@ -11,23 +11,37 @@ const Profile = () => {
       <PageHeader type="withPhoto" label="PROFILE" backButton={true} />
       <View style={styles.cardContainer}>
         <View style={styles.card}>
-          <Image
-            source={require('../../assets/images/ProfilePic.png')}
-            style={styles.profilePic}
-          />
-          <View>
-            <Text style={styles.greet}>Hey, Riana!</Text>
-            <View style={styles.locContainer}>
-              <Location style={styles.location} />
-              <Text style={styles.locText}>Manado, Sulawesi Utara</Text>
+          <View style={styles.sectionOne}>
+            <Image
+              source={require('../../assets/images/ProfilePic.png')}
+              style={styles.profilePic}
+            />
+            <View>
+              <Text style={styles.greet}>Hey, Riana!</Text>
+              <View style={styles.locContainer}>
+                <Location style={styles.location} />
+                <Text style={styles.locText}>Manado, Sulawesi Utara</Text>
+              </View>
+              <View style={styles.phoneContainer}>
+                <Phone style={styles.phone} />
+                <Text style={styles.number}>08995531888</Text>
+              </View>
             </View>
-            <View style={styles.phoneContainer}>
-              <Phone style={styles.phone}/>
-              <Text style={styles.number}>08995531888</Text>
-            </View>
+          </View>
+          <View style={styles.sectionTwo}>
+            <TouchableOpacity style={styles.changeDataButton}>
+              <Text style={styles.changeDataText}>CHANGE DATA</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.changePassButton}>
+              <Text style={styles.changePassText}>CHANGE PASSWORD</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
+      <TouchableOpacity style={styles.logOutButton}>
+        <Text style={styles.logOutText}>LOG OUT</Text>
+      </TouchableOpacity>
+      <View style={styles.line}/>
     </View>
   );
 };
@@ -51,11 +65,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#62FAD1',
     width: 333,
     height: 233,
-    borderWidth: 1,
     borderRadius: 15,
-    borderColor: 'black',
-    flexDirection: 'row',
     paddingBottom: 119,
+    elevation: 5,
   },
   cardContainer: {
     alignItems: 'center',
@@ -76,6 +88,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     width: 20,
     height: 20,
+    marginTop: 4,
   },
   locText: {
     marginLeft: 4,
@@ -86,11 +99,57 @@ const styles = StyleSheet.create({
     marginLeft: 4,
     color: '#000000',
     fontSize: 15,
+    marginTop: 3,
   },
   locContainer: {
     flexDirection: 'row',
   },
   phoneContainer: {
     flexDirection: 'row',
-  }
+  },
+  changeDataButton: {
+    backgroundColor: '#ffffff',
+    justifyContent: 'center',
+    width: 137,
+    height: 38,
+    borderRadius: 15,
+    opacity: 0.75,
+  },
+  changePassButton: {
+    backgroundColor: '#ffffff',
+    justifyContent: 'center',
+    width: 196,
+    height: 38,
+    borderRadius: 15,
+    marginTop: 6,
+    opacity: 0.75,
+  },
+  sectionOne: {
+    flexDirection: 'row',
+  },
+  sectionTwo: {
+    paddingTop: 16,
+    paddingLeft: 16,
+  },
+  changeDataText: {
+    color: '#000000',
+    fontSize: 15,
+    paddingLeft: 16,
+    fontFamily: 'Poppins-Medium',
+  },
+  changePassText: {
+    color: '#000000',
+    fontSize: 15,
+    paddingLeft: 16,
+    fontFamily: 'Poppins-Medium',
+  },
+  logOutText: {
+    color: '#000000',
+    fontFamily: 'Poppins-SemiBold',
+    textDecorationLine: 'underline',
+  },
+  logOutButton: {
+    paddingTop: 259,
+    paddingLeft: 43,
+  },
 });
