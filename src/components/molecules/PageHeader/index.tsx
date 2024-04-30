@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Medium',
     fontSize: 20,
     color: '#020202',
-    marginLeft: 103,
+    marginLeft: 100,
   },
   image: {
     width: 82,

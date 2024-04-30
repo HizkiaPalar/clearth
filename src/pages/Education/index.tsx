@@ -29,15 +29,15 @@ const Education = ({navigation}) => {
         <Gap height={17} />
         <View style={styles.bgcontainer3}>
           <Image source={Leafes} style={styles.image1} />
-          <TouchableOpacity>
-            <Text style={styles.heading3}> NATURE WASTE </Text>
+          <TouchableOpacity onPress={() => navigation.navigate('NatureWaste')}>
+            <Text style={styles.heading3}> Nature Waste </Text>
           </TouchableOpacity>
         </View>
         <Gap height={5} />
         <View style={styles.bgcontainer3}>
           <Image source={FoodWaste} style={styles.image2} />
-          <TouchableOpacity>
-            <Text style={styles.heading3}> FOOD WASTE </Text>
+          <TouchableOpacity onPress={() => navigation.navigate('FoodWaste')}>
+            <Text style={styles.heading3}> Food Waste </Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -50,21 +50,22 @@ const Education = ({navigation}) => {
         <Gap height={17} />
         <View style={styles.bgcontainer3}>
           <Image source={Plastic} style={styles.image1} />
-          <TouchableOpacity>
-            <Text style={styles.heading3_2}> PLASTIC </Text>
+          <TouchableOpacity onPress={() => navigation.navigate('Plastic')}>
+            <Text style={styles.heading3_2}> Plastic </Text>
           </TouchableOpacity>
         </View>
         <Gap height={5} />
         <View style={styles.bgcontainer3}>
           <Image source={BrokenGlass} style={styles.image2} />
-          <TouchableOpacity>
-            <Text style={styles.heading3_2}> GLASS </Text>
+          <TouchableOpacity onPress={() => navigation.navigate('Glass')}>
+            <Text style={styles.heading3_2}> Glass </Text>
           </TouchableOpacity>
         </View>
+        <Gap height={5} />
         <View style={styles.bgcontainer3}>
           <Image source={Metals} style={styles.image3} />
-          <TouchableOpacity>
-            <Text style={styles.heading3_2}> METAL </Text>
+          <TouchableOpacity onPress={() => navigation.navigate('Metal')}>
+            <Text style={styles.heading3_2}> Metal </Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -102,22 +103,26 @@ const styles = StyleSheet.create({
     paddingLeft: 60,
   },
   bgcontainer1: {
-    flexDirection: 'column',
+    flexDirection: 'row',
     borderRadius: 8,
     borderTopRightRadius: 30,
     borderBottomLeftRadius: 30,
     width: 120,
     backgroundColor: '#C3FFAE',
     marginLeft: 30,
+    height: 39,
+    alignItems: 'center',
   },
   bg2container1: {
-    flexDirection: 'column',
+    flexDirection: 'row',
     borderRadius: 8,
     borderTopRightRadius: 30,
     borderBottomLeftRadius: 30,
     width: 161,
     backgroundColor: '#C3FFAE',
     marginLeft: 30,
+    height: 39,
+    alignItems: 'center',
   },
   bgcontainer2: {
     width: 350,
