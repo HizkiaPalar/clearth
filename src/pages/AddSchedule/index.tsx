@@ -1,7 +1,7 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Image} from 'react-native';
 import React from 'react';
 import {PageHeader} from '../../components';
-import {color} from '@rneui/base';
+import {Min, Plus} from '../../assets/images';
 
 const AddSchedule = ({navigation}) => {
   return (
@@ -24,6 +24,19 @@ const AddSchedule = ({navigation}) => {
           </View>
           <View style={styles.containerbox4}>
             <Text style={styles.text2}>REMINDS BEFORE</Text>
+            <View style={styles.minutes}>
+              <View style={styles.minutes2}>
+                <Image source={Min} style={styles.image1} />
+                <View>
+                  <Text style={styles.text3}>30</Text>
+                  <View style={styles.linetext} />
+                </View>
+                <Image source={Plus} style={styles.image1} />
+              </View>
+              <View style={styles.containerbox3}>
+                <Text style={styles.text5}>MINUTES</Text>
+              </View>
+            </View>
           </View>
         </View>
       </View>
@@ -44,7 +57,7 @@ const styles = StyleSheet.create({
   },
   containerbox2: {
     backgroundColor: '#C3FFAE',
-    height: 333,
+    height: 350,
     width: 333,
     borderRadius: 15,
   },
@@ -76,5 +89,39 @@ const styles = StyleSheet.create({
     height: 45,
     backgroundColor: 'white',
     borderRadius: 10,
+  },
+  minutes: {
+    width: 91,
+    height: 64,
+    backgroundColor: 'white',
+    borderRadius: 10,
+  },
+  minutes2: {
+    justifyContent: 'space-around',
+    flexDirection: 'row',
+    paddingTop: 5,
+  },
+  text3: {
+    fontFamily: 'Poppins-Regular',
+    color: 'black',
+    fontSize: 20,
+    paddingLeft: 3,
+  },
+  image1: {
+    width: 15,
+    height: 15,
+    marginTop: 3,
+  },
+  linetext: {
+    color: 'black',
+    height: 1,
+    width: 32,
+    backgroundColor: 'black',
+  },
+  text5: {
+    fontFamily: 'Poppins-Regular',
+    color: 'black',
+    fontSize: 10,
+    paddingTop: 6,
   },
 });
