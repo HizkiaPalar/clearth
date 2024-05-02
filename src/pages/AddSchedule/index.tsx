@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View, Image} from 'react-native';
 import React from 'react';
 import {PageHeader} from '../../components';
-import {Min, Plus} from '../../assets/images';
+import {Arrow, Min, Plus} from '../../assets/images';
 
 const AddSchedule = ({navigation}) => {
   return (
@@ -20,21 +20,29 @@ const AddSchedule = ({navigation}) => {
           <View style={styles.line} />
           <View style={styles.containerbox4}>
             <Text style={styles.text2}>ADD DESCRIPTION</Text>
-            <View style={styles.add} />
+            <View style={styles.add}>
+              <Image source={Arrow} />
+            </View>
           </View>
           <View style={styles.containerbox4}>
             <Text style={styles.text2}>REMINDS BEFORE</Text>
-            <View style={styles.minutes}>
-              <View style={styles.minutes2}>
-                <Image source={Min} style={styles.image1} />
-                <View>
-                  <Text style={styles.text3}>30</Text>
-                  <View style={styles.linetext} />
+            <View
+              style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+              <View style={styles.minutes}>
+                <View style={styles.minutes2}>
+                  <Image source={Min} style={styles.image1} />
+                  <View>
+                    <Text style={styles.text3}>30</Text>
+                    <View style={styles.linetext} />
+                  </View>
+                  <Image source={Plus} style={styles.image1} />
                 </View>
-                <Image source={Plus} style={styles.image1} />
+                <View style={styles.containerbox3}>
+                  <Text style={styles.text5}>MINUTES</Text>
+                </View>
               </View>
-              <View style={styles.containerbox3}>
-                <Text style={styles.text5}>MINUTES</Text>
+              <View style={styles.containerbutton}>
+                <Text style={styles.text4}>ADD</Text>
               </View>
             </View>
           </View>
@@ -89,6 +97,10 @@ const styles = StyleSheet.create({
     height: 45,
     backgroundColor: 'white',
     borderRadius: 10,
+    justifyContent: 'flex-end',
+    flexDirection: 'row',
+    paddingRight: 10,
+    paddingTop: 10,
   },
   minutes: {
     width: 91,
@@ -123,5 +135,19 @@ const styles = StyleSheet.create({
     color: 'black',
     fontSize: 10,
     paddingTop: 6,
+  },
+  containerbutton: {
+    height: 54,
+    width: 122,
+    backgroundColor: '#63C427',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 25,
+    marginRight: 15,
+  },
+  text4: {
+    fontSize: 20,
+    fontFamily: 'Poppins-Bold',
+    color: 'white',
   },
 });

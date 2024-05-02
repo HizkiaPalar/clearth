@@ -7,4 +7,16 @@ import Cards from './Cards .png';
 import Add from './Add.png';
 import Min from './min.png';
 import Plus from './plus.png';
-export {Logo2, eyes, eyesclosed, Cards, facebook, google, Add, Min, Plus};
+import Arrow from './Arrow.png';
+export {
+  Logo2,
+  eyes,
+  eyesclosed,
+  Cards,
+  facebook,
+  google,
+  Add,
+  Min,
+  Plus,
+  Arrow,
+};
