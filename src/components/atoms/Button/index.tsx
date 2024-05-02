@@ -1,4 +1,4 @@
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {BackButton} from '../../../assets/icon';
 
@@ -14,6 +14,15 @@ const index = ({
     return (
       <TouchableOpacity activeOpacity={0.7} onPress={onPress}>
         {icon === 'icon-back' && <BackButton />}
+      </TouchableOpacity>
+    );
+  }
+  if (type === 'read-more') {
+    return (
+      <TouchableOpacity activeOpacity={0.7} onPress={onPress}>
+        <View style={styles.bgfont}>
+          <Text style={styles.heading1}>Read More</Text>
+        </View>
       </TouchableOpacity>
     );
   }
@@ -41,4 +50,19 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: textColor,
   }),
+  bgfont: {
+    width: 134,
+    height: 34,
+    borderRadius: 25,
+    backgroundColor: 'white',
+    alignItems: 'center',
+    justifyContent: 'center',
+    left: 100,
+  },
+  heading1: {
+    fontSize: 15,
+    fontFamily: 'Poppins-Regular',
+    color: '#000000',
+    textAlign: 'center',
+  },
 });

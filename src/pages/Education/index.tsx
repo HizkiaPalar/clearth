@@ -13,8 +13,8 @@ const Education = ({navigation}) => {
   return (
     <View style={styles.bg}>
       <PageHeader
-        type="withPhoto"
-        label="EDUCATION"
+        type="withPhoto2"
+        label2="EDUCATION"
         backButton={true}
         onPress={() => navigation.goBack()}
       />
@@ -129,6 +129,8 @@ const styles = StyleSheet.create({
     height: 170,
     borderRadius: 10,
     borderBottomWidth: 6,
+    borderRightWidth: 0.01,
+    borderLeftWidth: 0.01,
     borderBottomColor: 'rgba(0, 0, 0, 0.15)',
     backgroundColor: '#00FFCB',
     marginLeft: 30,
@@ -139,6 +141,8 @@ const styles = StyleSheet.create({
     height: 230,
     borderRadius: 10,
     borderBottomWidth: 6,
+    borderRightWidth: 0.01,
+    borderLeftWidth: 0.01,
     borderBottomColor: 'rgba(0, 0, 0, 0.15)',
     backgroundColor: '#00FFCB',
     marginLeft: 30,

@@ -4,7 +4,7 @@ import {Button} from '../../atoms';
 import {Logo2} from '../../../assets/images';
 import SearchBar from '../../atoms/SearchBar';
 
-const PageHeader = ({label, backButton, onPress, type}) => {
+const PageHeader = ({label, label2, label3, backButton, onPress, type}) => {
   if (type === 'withPhoto') {
     return (
       <View style={styles.containerWithPhoto}>
@@ -13,6 +13,30 @@ const PageHeader = ({label, backButton, onPress, type}) => {
             <Button type="icon-only" icon="icon-back" onPress={onPress} />
           )}
           <Text style={styles.label}>{label}</Text>
+        </View>
+      </View>
+    );
+  }
+  if (type === 'withPhoto2') {
+    return (
+      <View style={styles.containerWithPhoto}>
+        <View style={styles.container}>
+          {backButton && (
+            <Button type="icon-only" icon="icon-back" onPress={onPress} />
+          )}
+          <Text style={styles.label2}>{label2}</Text>
+        </View>
+      </View>
+    );
+  }
+  if (type === 'withPhoto3') {
+    return (
+      <View style={styles.containerWithPhoto}>
+        <View style={styles.container}>
+          {backButton && (
+            <Button type="icon-only" icon="icon-back" onPress={onPress} />
+          )}
+          <Text style={styles.label3}>{label3}</Text>
         </View>
       </View>
     );
@@ -58,10 +82,22 @@ const styles = StyleSheet.create({
     marginLeft: -10,
   },
   label: {
-    fontFamily: 'Poppins-Medium',
+    fontFamily: 'Poppins-SemiBold',
     fontSize: 20,
     color: '#020202',
-    marginLeft: 100,
+    left: 110,
+  },
+  label2: {
+    fontFamily: 'Poppins-SemiBold',
+    fontSize: 20,
+    color: '#020202',
+    left: 95,
+  },
+  label3: {
+    fontFamily: 'Poppins-SemiBold',
+    fontSize: 20,
+    color: '#020202',
+    left: 76,
   },
   image: {
     width: 82,
