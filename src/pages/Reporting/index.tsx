@@ -1,144 +1,201 @@
+import {StyleSheet, Text, View, Image} from 'react-native';
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
-import { PageHeader } from '../../components'; 
-import Add from '../../assets/images/Add.png';
-import MapMarker from '../../assets/icon/MapMarker.svg';
-import MapPin from '../../assets/icon/MapPin.svg';
-import Report from '../../assets/images/Report.png';
-import Tps from '../../assets/images/Tps.png';
-import { Icon } from '@rneui/themed';
+import {PageHeader} from '../../components/molecules';
 
 const Reporting = () => {
   return (
-    <View style={{ flex: 1 }}>
-      <PageHeader
-        type="withPhoto"
-        label="Reporting"
-        backButton={true}
+    <View style={styles.container}>
+      <PageHeader type="withPhoto" backButton={true} label="REPORTING" />
+      <Image
+        source={require('../../assets/images/Tps.png')}
+        style={styles.imgTps}
       />
-      <View style={styles.content}>
-        <View style={[styles.tpContainer, { flex: 1 }]}>         
-          <View>
-            <Image source={Tps} style={styles.addImage2}/>
-              <MapMarker/>
-                <MapPin/>
-          </View>         
-        </View>
-        <View style={styles.greenBox}>
-          <Image source={Add} style={styles.addImage} />
-        </View>
-        <Text style={styles.reported}>REPORTED ILLEGAL BINS</Text>
-        <View style={styles.secondGreenBox}>
-          <View>
-          <Image source={Report} style={styles.rep}/>
-        </View>
-          <View style={styles.fontContainer}>
-            <Text style={styles.text3}>COORDINATE POINTS</Text>
-            <Text style={styles.text4}>CHECK IT</Text> 
+      <View style={styles.containerImg}>
+        <Image
+          source={require('../../assets/images/Mp.png')}
+          style={styles.imgPin}
+        />
+        <Text style={styles.textNum}>1.480699,124.857406</Text>
+        <Image
+          source={require('../../assets/images/Mm.png')}
+          style={styles.imgMarker}
+        />
+      </View>
+      <View style={styles.containerBox}>
+        <Text style={styles.textReport}>REPORTED ILLEGAL BINS</Text>
+        <View style={styles.boxCoordinate}>
+          <Image source={require('../../assets/images/Report.png')} />
+          <View style={styles.textBox1}>
+            <Text style={styles.cp}>COORDINATE POINTS</Text>
+            <Text style={styles.ci}>CHECK IT</Text>
           </View>
-          <View style={styles.iconContainer}>
-                <MapPin/>
-                <Text style={styles.text5}>1.480699,124.857406</Text> 
-                <MapMarker/>
-            </View>   
-        </View>        
-        <Text style={styles.report}>LET'S REPORT IT!</Text>
+          <View style={styles.textBox2}>
+            <Image
+              source={require('../../assets/images/Mp.png')}
+              style={styles.pin2}
+            />
+            <Text style={styles.textNum2}>1.480699,124.857406</Text>
+            <Image
+              source={require('../../assets/images/Mm.png')}
+              style={styles.marker2}
+            />
+          </View>
+        </View>
+        <View style={styles.boxCoordinate2}>
+          <Image
+            source={require('../../assets/images/Report.png')}
+            style={styles.box2}
+          />
+          <View style={styles.textBox3}>
+            <Text style={styles.cp}>COORDINATE POINTS</Text>
+            <Text style={styles.ci}>CHECK IT</Text>
+          </View>
+          <View style={styles.textBox4}>
+            <Image
+              source={require('../../assets/images/Mp.png')}
+              style={styles.pin2}
+            />
+            <Text style={styles.textNum2}>1.480699,124.857406</Text>
+            <Image
+              source={require('../../assets/images/Mm.png')}
+              style={styles.marker2}
+            />
+          </View>
+            <Text style={styles.Lp}>LETS REPORT IT!</Text>
+            <View style={styles.boxCoordinate3}>
+            <Image
+              source={require('../../assets/images/Add.png')}
+              style={styles.add}
+            />
+            </View>
+        </View>
       </View>
     </View>
   );
 };
 
-const styles = StyleSheet.create({  
-  content: {
-    marginTop: 20,
-  },
-  reported: {
-    fontSize: 20,
-    marginLeft: 29,
-    marginTop: 300,
-    fontWeight: 'bold',
-    fontFamily: 'Poppins-Regular',
-  },
-  report: {
-    fontSize: 20,
-    marginTop: 19,
-    marginLeft: 29,
-    marginBottom: 188,
-    fontWeight: 'bold',
-    fontFamily: 'Poppins-Regular',
-  },
-  greenBox: {
-    position: 'absolute',
-    width: 60,
-    height: 60,
-    backgroundColor: '#63C427',
-    marginTop: 520,
-    marginLeft: 30,
-    borderRadius: 15,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  secondGreenBox: {
-    width: 276,
-    height: 134,
-    backgroundColor: '#C3FFAE',
-    marginTop: 12,
-    borderRadius: 15,
-    marginLeft: 29,
-  },
-  addImage: {
-    width: 30,
-    height: 30,
-  },
-  addImage2:{
-    width:450,
-    height:300,
-    
-  },
-  rep: {
-    width: 276,
-    height: 86,
-
-  },
-  tpContainer: {
-    alignItems: 'center',
-  },
-  tp: {
-    width: 480,
-    height: 312,
-    marginTop: -20
-  },
-  text3:{
-    fontSize:10,
-    fontFamily: 'Poppins-SemiBold',
-    paddingLeft: 10,
-  },
-  text4:{
-    fontSize:10,
-    fontFamily: 'Poppins-SemiBold',
-  
-  },
-  text5:{
-    fontSize:15,
-    fontFamily: 'Poppins-Light',
-    paddingRight: 60,
-    color:'#000000'
-  
-  },
-  fontContainer:{
-    flexDirection:'row',
-    justifyContent:'space-between',
-    paddingRight: 10,
-
-    
-  },
-  iconContainer:{
-    justifyContent: 'space-between',
-    flexDirection: 'row',
-    paddingRight: 10,
-    paddingLeft: 10,
-    
-  },
-});
-
 export default Reporting;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  containerImg: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    bottom: 50,
+  },
+  containerBox: {
+    flexDirection: 'row',
+  },
+  imgTps: {
+    width: '100%',
+  },
+  imgPin: {
+    right: 0,
+    bottom: 4,
+    height: 51,
+  },
+  textNum: {
+    fontSize: 20,
+    color: '#fff',
+    right: 58,
+    bottom: 1,
+  },
+  textNum2: {
+    marginLeft: 1,
+  },
+  textReport: {
+    fontSize: 20,
+    fontFamily: 'Poppins-Regular',
+    color: 'black',
+    marginLeft: 30,
+    marginTop: -29,
+  },
+  imgMarker: {
+    bottom: 4,
+    right: 9,
+    height: 48,
+  },
+  boxCoordinate: {
+    height: 134,
+    width: 276,
+    backgroundColor: '#C3FFAE',
+    borderRadius: 15,
+    marginTop: 6,
+    marginLeft: -220,
+  },
+  boxCoordinate2: {
+    height: 134,
+    width: 276,
+    backgroundColor: '#C3FFAE',
+    borderRadius: 15,
+    marginTop: 6,
+    marginLeft: 20,
+  },
+  boxCoordinate3: {
+    height: 60,
+    width: 60,
+    backgroundColor: '#63C427',
+    borderRadius: 15,
+    alignItems:"center",
+    marginLeft:-295,
+    bottom: -35,
+  },
+  textBox1: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 5,
+    marginBottom: 4,
+  },
+  textBox2: {
+    flexDirection: 'row',
+  },
+  textBox3: {
+    flexDirection: 'row',
+  },
+  textBox4: {
+    flexDirection: 'row',
+    marginTop: 5,
+    marginBottom: 4,
+  },
+  pin2: {
+    height: 23,
+    width: 23,
+  },
+  marker2: {
+    marginLeft: 70,
+    height: 23,
+    width: 23,
+  },
+  cp: {
+    left: 10,
+    fontSize: 10,
+    color: 'black',
+    fontFamily: 'Poppins-Regular',
+  },
+  ci: {
+    right: 10,
+    fontSize: 10,
+    color: 'black',
+    fontFamily: 'Poppins-Regular',
+  },
+  Lp:{
+    color:'black',
+    marginLeft:-295,
+    bottom: -20,
+    fontSize:20,
+    fontFamily: 'Poppins-Regular',
+    
+  },
+  box2: {
+    width: 110,
+    borderRadius: 15,
+  },
+  add:{
+    width:50,
+    height:50,
+    top:5
+  }
+});
