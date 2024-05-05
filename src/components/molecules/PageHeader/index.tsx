@@ -4,7 +4,15 @@ import {Button} from '../../atoms';
 import {Logo2} from '../../../assets/images';
 import SearchBar from '../../atoms/SearchBar';
 
-const PageHeader = ({label, label2, label3, backButton, onPress, type}) => {
+const PageHeader = ({
+  label,
+  label2,
+  label3,
+  label4,
+  backButton,
+  onPress,
+  type,
+}) => {
   if (type === 'withPhoto') {
     return (
       <View style={styles.containerWithPhoto}>
@@ -37,6 +45,18 @@ const PageHeader = ({label, label2, label3, backButton, onPress, type}) => {
             <Button type="icon-only" icon="icon-back" onPress={onPress} />
           )}
           <Text style={styles.label3}>{label3}</Text>
+        </View>
+      </View>
+    );
+  }
+  if (type === 'withPhoto4') {
+    return (
+      <View style={styles.containerWithPhoto}>
+        <View style={styles.container}>
+          {backButton && (
+            <Button type="icon-only" icon="icon-back" onPress={onPress} />
+          )}
+          <Text style={styles.label4}>{label4}</Text>
         </View>
       </View>
     );
@@ -98,6 +118,12 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: '#020202',
     left: 76,
+  },
+  label4: {
+    fontFamily: 'Poppins-SemiBold',
+    fontSize: 20,
+    color: '#020202',
+    left: 105,
   },
   image: {
     width: 82,
