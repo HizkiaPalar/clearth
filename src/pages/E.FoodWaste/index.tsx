@@ -3,7 +3,7 @@ import React from 'react';
 import {Button, Gap, PageHeader} from '../../components';
 import {img_FoodWaste} from '../../assets/images';
 
-const NatureWaste = ({navigation}) => {
+const FoodWaste = ({navigation}) => {
   return (
     <View style={styles.bg}>
       <PageHeader
@@ -37,7 +37,7 @@ const NatureWaste = ({navigation}) => {
   );
 };
 
-export default NatureWaste;
+export default FoodWaste;
 
 const styles = StyleSheet.create({
   bg: {
