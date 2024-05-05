@@ -9,6 +9,7 @@ const PageHeader = ({
   label2,
   label3,
   label4,
+  label5,
   backButton,
   onPress,
   type,
@@ -57,6 +58,18 @@ const PageHeader = ({
             <Button type="icon-only" icon="icon-back" onPress={onPress} />
           )}
           <Text style={styles.label4}>{label4}</Text>
+        </View>
+      </View>
+    );
+  }
+  if (type === 'withPhoto5') {
+    return (
+      <View style={styles.containerWithPhoto}>
+        <View style={styles.container}>
+          {backButton && (
+            <Button type="icon-only" icon="icon-back" onPress={onPress} />
+          )}
+          <Text style={styles.label5}>{label5}</Text>
         </View>
       </View>
     );
@@ -124,6 +137,12 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: '#020202',
     left: 105,
+  },
+  label5: {
+    fontFamily: 'Poppins-SemiBold',
+    fontSize: 20,
+    color: '#020202',
+    left: 110,
   },
   image: {
     width: 82,

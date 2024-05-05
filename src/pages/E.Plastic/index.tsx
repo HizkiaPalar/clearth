@@ -14,7 +14,7 @@ const Plastic = ({navigation}) => {
       />
       <Gap height={30} />
       <View style={styles.bgcontainer1}>
-        <Text style={styles.heading1}>Plastic</Text>
+        <Text style={styles.heading1}>PLASTIC</Text>
       </View>
       <Gap height={7} />
       <View style={styles.bgcontainer2}>
