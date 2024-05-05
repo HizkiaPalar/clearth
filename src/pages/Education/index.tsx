@@ -27,19 +27,19 @@ const Education = ({navigation}) => {
       <Gap height={7} />
       <View style={styles.bgcontainer2}>
         <Gap height={17} />
-        <View style={styles.bgcontainer3}>
-          <Image source={Leafes} style={styles.image1} />
-          <TouchableOpacity onPress={() => navigation.navigate('NatureWaste')}>
+        <TouchableOpacity onPress={() => navigation.navigate('NatureWaste')}>
+          <View style={styles.bgcontainer3}>
+            <Image source={Leafes} style={styles.image1} />
             <Text style={styles.heading3}> Nature Waste </Text>
-          </TouchableOpacity>
-        </View>
+          </View>
+        </TouchableOpacity>
         <Gap height={5} />
-        <View style={styles.bgcontainer3}>
-          <Image source={FoodWaste} style={styles.image2} />
-          <TouchableOpacity onPress={() => navigation.navigate('FoodWaste')}>
+        <TouchableOpacity onPress={() => navigation.navigate('FoodWaste')}>
+          <View style={styles.bgcontainer3}>
+            <Image source={FoodWaste} style={styles.image2} />
             <Text style={styles.heading3}> Food Waste </Text>
-          </TouchableOpacity>
-        </View>
+          </View>
+        </TouchableOpacity>
       </View>
       <Gap height={50} />
       <View style={styles.bg2container1}>
@@ -48,26 +48,26 @@ const Education = ({navigation}) => {
       <Gap height={7} />
       <View style={styles.bg2container2}>
         <Gap height={17} />
-        <View style={styles.bgcontainer3}>
-          <Image source={Plastic} style={styles.image1} />
-          <TouchableOpacity onPress={() => navigation.navigate('Plastic')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Plastic')}>
+          <View style={styles.bgcontainer3}>
+            <Image source={Plastic} style={styles.image1} />
             <Text style={styles.heading3_2}> Plastic </Text>
-          </TouchableOpacity>
-        </View>
+          </View>
+        </TouchableOpacity>
         <Gap height={5} />
-        <View style={styles.bgcontainer3}>
-          <Image source={BrokenGlass} style={styles.image2} />
-          <TouchableOpacity onPress={() => navigation.navigate('Glass')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Glass')}>
+          <View style={styles.bgcontainer3}>
+            <Image source={BrokenGlass} style={styles.image2} />
             <Text style={styles.heading3_2}> Glass </Text>
-          </TouchableOpacity>
-        </View>
+          </View>
+        </TouchableOpacity>
         <Gap height={5} />
-        <View style={styles.bgcontainer3}>
-          <Image source={Metals} style={styles.image3} />
-          <TouchableOpacity onPress={() => navigation.navigate('Metal')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Metal')}>
+          <View style={styles.bgcontainer3}>
+            <Image source={Metals} style={styles.image3} />
             <Text style={styles.heading3_2}> Metal </Text>
-          </TouchableOpacity>
-        </View>
+          </View>
+        </TouchableOpacity>
       </View>
     </View>
   );
