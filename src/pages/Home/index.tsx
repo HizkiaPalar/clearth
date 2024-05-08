@@ -15,7 +15,7 @@ const Home = ({navigation}) => {
     <ScrollView>
       <View style={styles.container}>
         <View>
-          <PageHeader type="withPr" backButton={false} />
+          <PageHeader type="withSB" backButton={false} />
         </View>
         <View style={styles.contentContainer}>
           <View style={styles.tcontainer}>
@@ -76,7 +76,7 @@ const Home = ({navigation}) => {
             <Text style={styles.textImagebottom}>around you !</Text>
             <TouchableOpacity
               style={styles.buttonContainer}
-              onPress={() => navigation.navigate('Education')}>
+              onPress={() => navigation.navigate('Reporting')}>
               <Text style={styles.buttonText1}>Report</Text>
             </TouchableOpacity>
           </ImageBackground>

@@ -21,7 +21,7 @@ const Schedule = ({navigation}) => {
     <View style={styles.container}>
       <PageHeader
         type="withPhoto"
-        label="Schedule"
+        label="SCHEDULE"
         backButton={true}
         onPress={() => navigation.goBack()}
       />
