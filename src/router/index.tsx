@@ -14,6 +14,7 @@ import {
   Plastic,
   Glass,
   Metal,
+  Profile,
 } from '../pages';
 
 const Stack = createNativeStackNavigator();
@@ -83,6 +84,11 @@ const index = () => {
       <Stack.Screen
         name="Metal"
         component={Metal}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Profile"
+        component={Profile}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
