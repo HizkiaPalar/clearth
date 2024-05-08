@@ -8,6 +8,12 @@ import {
   SignIn,
   SignUp,
   Schedule,
+  Education,
+  NatureWaste,
+  FoodWaste,
+  Plastic,
+  Glass,
+  Metal,
 } from '../pages';
 
 const Stack = createNativeStackNavigator();
@@ -47,6 +53,33 @@ const index = () => {
       <Stack.Screen
         name="AddSchedule"
         component={AddSchedule}
+        name="Education"
+        component={Education}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="NatureWaste"
+        component={NatureWaste}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="FoodWaste"
+        component={FoodWaste}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Plastic"
+        component={Plastic}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Glass"
+        component={Glass}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Metal"
+        component={Metal}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
