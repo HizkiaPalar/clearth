@@ -3,7 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
   AddSchedule,
   Home,
-  Reporting2,
+  Reporting,
   SplashScreen,
   SignIn,
   SignUp,
@@ -46,13 +46,16 @@ const index = () => {
         options={{headerShown: false}}
       />
       <Stack.Screen
-        name="Reporting2"
-        component={Reporting2}
+        name="Reporting"
+        component={Reporting}
         options={{headerShown: false}}
       />
       <Stack.Screen
         name="AddSchedule"
         component={AddSchedule}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
         name="Education"
         component={Education}
         options={{headerShown: false}}
