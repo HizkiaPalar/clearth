@@ -63,7 +63,7 @@ const Schedule = ({navigation}) => {
             }}
           />
         </View>
-        <View style={styles.containerscheduleall}>
+        <View style={styles.containerscheduleal}>
           <View style={styles.todayScheduleContainer}>
             <Text style={styles.todayScheduleText}>TODAY'S SCHEDULE</Text>
             <TouchableOpacity
@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
     marginHorizontal: 9,
   },
-  containerscheduleall: {
+  containerscheduleal: {
     justifyContent: 'center',
     alignItems: 'center',
   },
