@@ -31,7 +31,8 @@ const FoodWaste = ({navigation}) => {
             berguna bagi pertumbuhan tanaman.
           </Text>
           <Button
-            type="read-more"
+            type="white-button"
+            label="Read More"
             onPress={() => navigation.navigate('RM_FoodWaste')}
           />
         </View>

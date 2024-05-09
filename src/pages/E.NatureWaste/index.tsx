@@ -31,7 +31,8 @@ const NatureWaste = ({navigation}) => {
             adalah beberapa contohnya.
           </Text>
           <Button
-            type="read-more"
+            type="white-button"
+            label="Read More"
             onPress={() => navigation.navigate('RM_NatureWaste')}
           />
         </View>

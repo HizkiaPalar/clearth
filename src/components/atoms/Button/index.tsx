@@ -17,11 +17,11 @@ const index = ({
       </TouchableOpacity>
     );
   }
-  if (type === 'read-more') {
+  if (type === 'white-button') {
     return (
       <TouchableOpacity activeOpacity={0.7} onPress={onPress}>
         <View style={styles.bgfont}>
-          <Text style={styles.heading1}>Read More</Text>
+          <Text style={styles.heading1}>{label}</Text>
         </View>
       </TouchableOpacity>
     );

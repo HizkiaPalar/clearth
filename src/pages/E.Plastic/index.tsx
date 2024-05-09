@@ -32,7 +32,8 @@ const Plastic = ({navigation}) => {
             alam.
           </Text>
           <Button
-            type="read-more"
+            type="white-button"
+            label="Read More"
             onPress={() => navigation.navigate('RM_Plastic')}
           />
         </View>

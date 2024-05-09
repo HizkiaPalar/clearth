@@ -29,7 +29,8 @@ const Glass = ({navigation}) => {
             Pertama, dengan daur ulang,
           </Text>
           <Button
-            type="read-more"
+            type="white-button"
+            label="Read More"
             onPress={() => navigation.navigate('RM_Glass')}
           />
         </View>

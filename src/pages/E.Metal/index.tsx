@@ -31,7 +31,8 @@ const Metal = ({navigation}) => {
             berbagai produk
           </Text>
           <Button
-            type="read-more"
+            type="white-button"
+            label="Read More"
             onPress={() => navigation.navigate('RM_Metal')}
           />
         </View>
