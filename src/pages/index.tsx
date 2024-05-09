@@ -4,4 +4,6 @@ import SignUp from './SignUp';
 import Home from './Home';
 import Schedule from './Schedule';
 import Profile from './Profile';
-export {SplashScreen, SignIn, SignUp, Schedule, Home, Profile};
+import ProfileFormat from './ProfileFormat';
+
+export {SplashScreen, SignIn, SignUp, Schedule, Home, Profile, ProfileFormat};

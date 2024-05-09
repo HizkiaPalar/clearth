@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     marginLeft: -10,
   },
   label: {
-    fontFamily: 'Poppins-Bold',
+    fontFamily: 'Poppins-Medium',
     fontSize: 20,
     color: '#020202',
     marginLeft: 100,

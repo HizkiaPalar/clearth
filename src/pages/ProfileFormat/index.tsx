@@ -1,14 +1,19 @@
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
-import {PageHeader} from '../../components';
+import {PageHeader, TextInput} from '../../components';
 import {Image} from 'react-native-elements';
 import Location from '../../assets/icon/Location.svg';
 import Phone from '../../assets/icon/Phone Ringing.svg';
 
-const Profile = ({navigation}) => {
+const ProfileFormat = ({navigation}) => {
   return (
     <View style={styles.background}>
-      <PageHeader type="withPhoto" label="PROFILE" backButton={true} onPress={() => navigation.goBack()}/>
+      <PageHeader
+        type="withPhoto"
+        label="PROFILE"
+        backButton={true}
+        onPress={() => navigation.goBack()}
+      />
       <View style={styles.cardContainer}>
         <View style={styles.card}>
           <View style={styles.sectionOne}>
@@ -29,26 +34,20 @@ const Profile = ({navigation}) => {
             </View>
           </View>
           <View style={styles.sectionTwo}>
-            <TouchableOpacity
-              style={styles.changeDataButton}
-              onPress={() => navigation.navigate('ProfileFormat')}>
-              <Text style={styles.changeDataText}>Change Data</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.changePassButton}>
-              <Text style={styles.changePassText}>Change Password</Text>
+            <TouchableOpacity style={styles.changeDataButton}>
+              <Text style={styles.changeDataText}>Submit Data</Text>
             </TouchableOpacity>
           </View>
         </View>
       </View>
-      <TouchableOpacity style={styles.logOutButton}>
+      {/* <TouchableOpacity style={styles.logOutButton}>
         <Text style={styles.logOutText}>Log Out</Text>
-      </TouchableOpacity>
-      <View style={styles.line} />
+      </TouchableOpacity> */}
     </View>
   );
 };
 
-export default Profile;
+export default ProfileFormat;
 
 const styles = StyleSheet.create({
   background: {
@@ -112,10 +111,13 @@ const styles = StyleSheet.create({
   changeDataButton: {
     backgroundColor: '#ffffff',
     justifyContent: 'center',
+    alignItems: 'center',
     width: 137,
     height: 38,
     borderRadius: 15,
     opacity: 0.75,
+    marginLeft: 169,
+    marginTop: 50,
   },
   changePassButton: {
     backgroundColor: '#ffffff',
@@ -136,7 +138,6 @@ const styles = StyleSheet.create({
   changeDataText: {
     color: '#000000',
     fontSize: 15,
-    paddingLeft: 16,
     fontFamily: 'Poppins-Medium',
   },
   changePassText: {
