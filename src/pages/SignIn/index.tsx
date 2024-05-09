@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   ScrollView,
   StyleSheet,
@@ -9,15 +9,34 @@ import {
 import {Gap, PageHeader, TextInput} from '../../components';
 
 const SignIn = ({navigation}) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSignIn = () => {
+    // Add your sign in logic here
+    navigation.navigate('Home');
+  };
+
   return (
     <ScrollView style={styles.container}>
       <PageHeader label="Sign In" backButton={false} />
       <Gap height={54} />
       <View style={styles.contentWrapper}>
         <Gap height={26} />
-        <TextInput label="Email" placeholder="Enter your email" />
+        <TextInput
+          label="Email"
+          placeholder="Enter your email"
+          value={email}
+          onChangeText={text => setEmail(text)}
+        />
         <Gap height={26} />
-        <TextInput label="Password" placeholder="Enter your password" />
+        <TextInput
+          label="Password"
+          placeholder="Enter your password"
+          value={password}
+          onChangeText={text => setPassword(text)}
+          secureTextEntry
+        />
         <View style={styles.signupWrapper}>
           <Text style={styles.text}>Don't have an account? </Text>
           <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
@@ -25,9 +44,7 @@ const SignIn = ({navigation}) => {
           </TouchableOpacity>
         </View>
         <Gap height={30} />
-        <TouchableOpacity
-          style={styles.signInButton}
-          onPress={() => navigation.navigate('Home')}>
+        <TouchableOpacity style={styles.signInButton} onPress={handleSignIn}>
           <Text style={styles.signInButtonText}>Sign In</Text>
         </TouchableOpacity>
         <Gap height={20} />

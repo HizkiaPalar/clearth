@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   View,
@@ -9,6 +9,15 @@ import {
 import {Gap, PageHeader, TextInput} from '../../components';
 
 const SignUp = ({navigation}) => {
+  const [fullName, setFullName] = useState('');
+  const [emailOrPhoneNumber, setEmailOrPhoneNumber] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSignUp = () => {
+    // Add your sign up logic here
+    navigation.navigate('SignIn');
+  };
+
   return (
     <ScrollView style={styles.container}>
       <PageHeader
@@ -20,30 +29,29 @@ const SignUp = ({navigation}) => {
       <Gap height={24} />
       <View style={styles.contentWrapper}>
         <Gap height={24} />
-        <TextInput label="First Name" placeholder="Type your first name" />
-        <Gap height={24} />
-        <TextInput label="Last Name" placeholder="Type your last name" />
+        <TextInput
+          label="Full Name"
+          placeholder="Type your full name"
+          value={fullName}
+          onChangeText={text => setFullName(text)}
+        />
         <Gap height={24} />
         <TextInput
           label="Email or Phone Number"
           placeholder="Type your email or phone number"
+          value={emailOrPhoneNumber}
+          onChangeText={text => setEmailOrPhoneNumber(text)}
         />
         <Gap height={24} />
         <TextInput
           label="Password"
           placeholder="Type your password"
           secureTextEntry
-        />
-        <Gap height={24} />
-        <TextInput
-          label="Confirm Password"
-          placeholder="Confirm password"
-          secureTextEntry
+          value={password}
+          onChangeText={text => setPassword(text)}
         />
         <Gap height={32} />
-        <TouchableOpacity
-          style={styles.signUpButton}
-          onPress={() => navigation.navigate('SignIn')}>
+        <TouchableOpacity style={styles.signUpButton} onPress={handleSignUp}>
           <Text style={styles.signUpButtonText}>Sign Up</Text>
         </TouchableOpacity>
         <Gap height={24} />
