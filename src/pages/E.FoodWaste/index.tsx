@@ -30,7 +30,10 @@ const FoodWaste = ({navigation}) => {
             makanan dicampur dengan bahan organik lain untuk membuat kompos yang
             berguna bagi pertumbuhan tanaman.
           </Text>
-          <Button type="read-more" />
+          <Button
+            type="read-more"
+            onPress={() => navigation.navigate('RM_FoodWaste')}
+          />
         </View>
       </View>
     </View>

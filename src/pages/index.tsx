@@ -8,6 +8,11 @@ import FoodWaste from './E.FoodWaste';
 import Plastic from './E.Plastic';
 import Glass from './E.Glass';
 import Metal from './E.Metal';
+import RM_NatureWaste from './RM.NatureWaste';
+import RM_FoodWaste from './RM.FoodWaste';
+import RM_Plastic from './RM.Plastic';
+import RM_Glass from './RM.Glass';
+import RM_Metal from './RM.Metal';
 
 export {
   SplashScreen,
@@ -20,4 +25,9 @@ export {
   Plastic,
   Glass,
   Metal,
+  RM_NatureWaste,
+  RM_FoodWaste,
+  RM_Plastic,
+  RM_Glass,
+  RM_Metal,
 };

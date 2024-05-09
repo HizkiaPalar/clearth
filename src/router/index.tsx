@@ -11,6 +11,11 @@ import {
   Plastic,
   Glass,
   Metal,
+  RM_NatureWaste,
+  RM_FoodWaste,
+  RM_Plastic,
+  RM_Glass,
+  RM_Metal,
 } from '../pages';
 
 const Stack = createNativeStackNavigator();
@@ -65,6 +70,31 @@ const index = () => {
       <Stack.Screen
         name="Metal"
         component={Metal}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="RM_NatureWaste"
+        component={RM_NatureWaste}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="RM_FoodWaste"
+        component={RM_FoodWaste}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="RM_Plastic"
+        component={RM_Plastic}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="RM_Glass"
+        component={RM_Glass}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="RM_Metal"
+        component={RM_Metal}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

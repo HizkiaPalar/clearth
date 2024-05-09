@@ -31,7 +31,10 @@ const Plastic = ({navigation}) => {
             mengurangi penggunaan bahan baku baru dan menghemat sumber daya
             alam.
           </Text>
-          <Button type="read-more" />
+          <Button
+            type="read-more"
+            onPress={() => navigation.navigate('RM_Plastic')}
+          />
         </View>
       </View>
     </View>

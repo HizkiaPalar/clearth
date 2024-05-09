@@ -30,7 +30,10 @@ const Metal = ({navigation}) => {
             inovatif. Pertama, dengan daur ulang, besi bekas dapat dijadikan
             berbagai produk
           </Text>
-          <Button type="read-more" />
+          <Button
+            type="read-more"
+            onPress={() => navigation.navigate('RM_Metal')}
+          />
         </View>
       </View>
     </View>

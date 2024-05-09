@@ -28,7 +28,10 @@ const Glass = ({navigation}) => {
             diubah menjadi berkah melalui berbagai cara kreatif dan inovatif.
             Pertama, dengan daur ulang,
           </Text>
-          <Button type="read-more" />
+          <Button
+            type="read-more"
+            onPress={() => navigation.navigate('RM_Glass')}
+          />
         </View>
       </View>
     </View>

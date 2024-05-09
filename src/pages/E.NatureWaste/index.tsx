@@ -30,7 +30,10 @@ const NatureWaste = ({navigation}) => {
             kompos, kerajinan tangan, pakan ternak, teh herbal, dan biogas
             adalah beberapa contohnya.
           </Text>
-          <Button type="read-more" />
+          <Button
+            type="read-more"
+            onPress={() => navigation.navigate('RM_NatureWaste')}
+          />
         </View>
       </View>
     </View>
