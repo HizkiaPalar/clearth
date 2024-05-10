@@ -1,7 +1,6 @@
 import {StyleSheet, Text, View, ScrollView, Image} from 'react-native';
 import React from 'react';
-import {background_img} from '../../assets/images';
-import {Button, PageHeader} from '../../components';
+import {Button, PageHeader, Gap} from '../../components';
 
 const RM_NatureWaste = ({navigation}) => {
   return (
@@ -12,8 +11,8 @@ const RM_NatureWaste = ({navigation}) => {
         backButton={true}
         onPress={() => navigation.goBack()}
       />
+      <Gap height={76} />
       <View>
-        <Image source={background_img} style={styles.img} />
         <View style={styles.bgcontainer}>
           <ScrollView>
             <Text style={styles.heading1}>
@@ -72,7 +71,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#00FFCB',
     left: 30,
     right: 29,
-    bottom: 670,
     alignItems: 'center',
   },
   bgcontainer2: {
@@ -85,5 +83,6 @@ const styles = StyleSheet.create({
     color: '#000000',
     padding: 13,
     margin: 0.1,
+    textAlign: 'justify',
   },
 });

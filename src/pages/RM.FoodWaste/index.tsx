@@ -1,7 +1,6 @@
 import {StyleSheet, Text, View, ScrollView, Image} from 'react-native';
 import React from 'react';
-import {background_img} from '../../assets/images';
-import {Button, PageHeader} from '../../components';
+import {Button, PageHeader, Gap} from '../../components';
 
 const RM_FoodWaste = ({navigation}) => {
   return (
@@ -12,8 +11,8 @@ const RM_FoodWaste = ({navigation}) => {
         backButton={true}
         onPress={() => navigation.goBack()}
       />
+      <Gap height={76} />
       <View>
-        <Image source={background_img} style={styles.img} />
         <View style={styles.bgcontainer}>
           <ScrollView>
             <Text style={styles.heading1}>
@@ -22,12 +21,12 @@ const RM_FoodWaste = ({navigation}) => {
               melalui beberapa cara yang efektif. Pertama, dengan mengompos,
               dimana sisa makanan dicampur dengan bahan organik lain untuk
               membuat kompos yang berguna bagi pertumbuhan tanaman.
-              {'\n  '}Kedua, sisa makanan tertentu dapat diolah menjadi pakan
+              {'\n '}Kedua, sisa makanan tertentu dapat diolah menjadi pakan
               ternak, mengurangi limbah dan biaya pakan. Selanjutnya, donasi
               sisa makanan yang masih baik ke lembaga sosial membantu mereka
               yang membutuhkan. Kemudian, dengan kreativitas dalam memasak, sisa
               makanan dapat diubah menjadi hidangan baru yang lezat.
-              {'\n  '}Terakhir, dengan mengolah beberapa sisa makanan menjadi
+              {'\n '}Terakhir, dengan mengolah beberapa sisa makanan menjadi
               pupuk, kita dapat meningkatkan kesuburan tanah dan pertumbuhan
               tanaman secara alami. Melalui langkah-langkah ini, kita dapat
               mengubah sampah menjadi sesuatu yang memberi manfaat bagi diri
@@ -65,7 +64,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#00FFCB',
     left: 30,
     right: 29,
-    bottom: 670,
     alignItems: 'center',
   },
   bgcontainer2: {
@@ -78,5 +76,6 @@ const styles = StyleSheet.create({
     color: '#000000',
     padding: 13,
     margin: 0.1,
+    textAlign: 'justify',
   },
 });
