@@ -13,7 +13,6 @@ const SignIn = ({navigation}) => {
   const [password, setPassword] = useState('');
 
   const handleSignIn = () => {
-    // Add your sign in logic here
     navigation.navigate('Home');
   };
 

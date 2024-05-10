@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(0, 0, 0, 0.15)',
     borderBottomWidth: 5.5,
     borderLeftWidth: 5.5,
-    borderTopWidth: 1.5,
-    borderRightWidth: 1.5,
+    borderTopWidth: 1,
+    borderRightWidth: 1,
   },
 });
