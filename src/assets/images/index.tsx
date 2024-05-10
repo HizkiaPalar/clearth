@@ -7,4 +7,5 @@ import Cards from './Cards .png';
 import Add from './Add.png';
 import Report from './Report.png';
 import Tps from './Tps.png';
-export {Logo2, eyes, eyesclosed, Cards, facebook, google, Add, Report, Tps};
+import Sum from './Sum.png'
+export {Logo2, eyes, eyesclosed, Cards, facebook, google, Add, Report, Tps, Sum};

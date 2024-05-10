@@ -1,8 +1,8 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {PageHeader} from '../../components/molecules';
 
-const Reporting = () => {
+const Reporting = ({navigation}) => {
   return (
     <View style={styles.container}>
       <PageHeader type="withPhoto" backButton={true} label="REPORTING" />
@@ -63,10 +63,12 @@ const Reporting = () => {
           </View>
             <Text style={styles.Lp}>LETS REPORT IT!</Text>
             <View style={styles.boxCoordinate3}>
-            <Image
-              source={require('../../assets/images/Add.png')}
-              style={styles.add}
-            />
+              <TouchableOpacity onPress={()=> navigation.navigate('Addphoto')}>               
+                <Image
+                  source={require('../../assets/images/Add.png')}
+                  style={styles.add}
+                />
+              </TouchableOpacity>
             </View>
         </View>
       </View>
