@@ -1,11 +1,35 @@
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
-import React from 'react';
+import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
+import React, {useState} from 'react';
 import {PageHeader, TextInput} from '../../components';
-import {Image} from 'react-native-elements';
 import Location from '../../assets/icon/Location.svg';
 import Phone from '../../assets/icon/Phone Ringing.svg';
+import {UserPhoto} from '../../assets/images';
+import {launchImageLibrary} from 'react-native-image-picker';
+import {showMessage} from 'react-native-flash-message';
 
 const ProfileFormat = ({navigation}) => {
+  const [photo, setPhoto] = useState(UserPhoto);
+
+  const getImage = async () => {
+    const result = await launchImageLibrary({
+      maxHeight: 100,
+      maxWidth: 100,
+      quality: 0.5,
+      includeBase64: true,
+    });
+
+    if (result.didCancel) {
+      showMessage({
+        message: 'Ups',
+        type: 'danger',
+      });
+    } else {
+      const assets = result.assets[0];
+      const base64 = `data:${assets.type};base64,${assets.base64}`;
+      setPhoto({uri: base64});
+    }
+  };
+
   return (
     <View style={styles.background}>
       <PageHeader
@@ -17,21 +41,9 @@ const ProfileFormat = ({navigation}) => {
       <View style={styles.cardContainer}>
         <View style={styles.card}>
           <View style={styles.sectionOne}>
-            <Image
-              source={require('../../assets/images/ProfilePic.png')}
-              style={styles.profilePic}
-            />
-            <View>
-              <Text style={styles.greet}>Hey, Riana!</Text>
-              <View style={styles.locContainer}>
-                <Location style={styles.location} />
-                <Text style={styles.locText}>Manado, Sulawesi Utara</Text>
-              </View>
-              <View style={styles.phoneContainer}>
-                <Phone style={styles.phone} />
-                <Text style={styles.number}>08995531888</Text>
-              </View>
-            </View>
+            <TouchableOpacity style={styles.changePhotoButton} activeOpacity={0.5} onPress={getImage}>
+              <Image source={photo} style={styles.avatar} />
+            </TouchableOpacity>
           </View>
           <View style={styles.sectionTwo}>
             <TouchableOpacity style={styles.changeDataButton}>
@@ -55,6 +67,11 @@ const styles = StyleSheet.create({
     flex: 1,
     fontFamily: 'Poppins-Medium',
   },
+  changePhotoButton :{
+    borderStyle: 'dashed',
+    borderRadius: 100,
+
+  },
   greet: {
     fontFamily: 'Poppins-Medium',
     color: '#000000',
@@ -75,10 +92,10 @@ const styles = StyleSheet.create({
     paddingTop: 75,
   },
   profilePic: {
-    width: 98,
-    height: 96,
-    marginLeft: 14,
-    marginTop: 18,
+    width: 194,
+    height: 188,
+    borderWidth: 1,
+    borderRadius: 100,
   },
   location: {
     marginLeft: 10,
@@ -129,7 +146,8 @@ const styles = StyleSheet.create({
     opacity: 0.75,
   },
   sectionOne: {
-    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 23,
   },
   sectionTwo: {
     paddingTop: 16,
@@ -154,5 +172,10 @@ const styles = StyleSheet.create({
   logOutButton: {
     paddingTop: 259,
     paddingLeft: 43,
+  },
+  avatar: {
+    height: 90,
+    width: 90,
+    borderRadius: 90 / 2,
   },
 });

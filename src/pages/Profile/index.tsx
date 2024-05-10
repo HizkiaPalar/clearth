@@ -80,6 +80,8 @@ const styles = StyleSheet.create({
     height: 96,
     marginLeft: 14,
     marginTop: 18,
+    borderWidth: 1,
+    borderRadius: 50,
   },
   location: {
     marginLeft: 10,
