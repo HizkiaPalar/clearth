@@ -66,8 +66,7 @@ const Schedule = ({navigation}) => {
         <View style={styles.containerscheduleal}>
           <View style={styles.todayScheduleContainer}>
             <Text style={styles.todayScheduleText}>TODAY'S SCHEDULE</Text>
-            <TouchableOpacity
-              onPress={() => navigation.navigate('AddSchedule')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Alarms')}>
               <View style={styles.plus}>
                 <PlusSign />
               </View>

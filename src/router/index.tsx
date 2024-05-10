@@ -1,4 +1,5 @@
 import React from 'react';
+import {Text, TouchableOpacity, StyleSheet} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
   AddSchedule,
@@ -16,6 +17,9 @@ import {
   Metal,
   Profile,
 } from '../pages';
+import Alarms from '../screens/Alarms';
+import Settings from '../screens/Edit';
+import Ring from '../screens/Ring';
 
 const Stack = createNativeStackNavigator();
 const index = () => {
@@ -91,8 +95,65 @@ const index = () => {
         component={Profile}
         options={{headerShown: false}}
       />
+      <Stack.Screen
+        name="Alarms"
+        component={Alarms}
+        options={params => ({
+          ...headerStyles,
+          title: 'Alarms',
+          headerRight: () => (
+            <AddButton
+              title={'+ '}
+              onPress={() => params.navigation.navigate('Edit')}
+            />
+          ),
+        })}
+      />
+      <Stack.Screen
+        name="Edit"
+        component={Settings}
+        options={{...headerStyles, title: 'Alarm'}}
+      />
+      <Stack.Screen
+        name="Ring"
+        component={Ring}
+        options={{headerShown: false}}
+      />
     </Stack.Navigator>
   );
 };
 
 export default index;
+
+function AddButton({title, onPress}) {
+  return (
+    <TouchableOpacity
+      style={styles.button}
+      onPress={onPress}
+      underlayColor="#fff">
+      <Text style={styles.buttonText}>{title}</Text>
+    </TouchableOpacity>
+  );
+}
+
+export const headerStyles = {
+  headerStyle: {
+    elevation: 0,
+  },
+  headerTintColor: '#000',
+  headerTitleStyle: {
+    fontWeight: 'bold',
+  },
+};
+
+const styles = StyleSheet.create({
+  button: {
+    backgroundColor: 'transparent',
+    padding: 10,
+  },
+  buttonText: {
+    color: 'black',
+    fontWeight: 'bold',
+    fontSize: 25,
+  },
+});

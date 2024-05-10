@@ -64,7 +64,7 @@ const Home = ({navigation}) => {
             <Text style={styles.textImagebottom}>forget !</Text>
             <TouchableOpacity
               style={styles.buttonContainer}
-              onPress={() => navigation.navigate('Schedule')}>
+              onPress={() => navigation.navigate('Alarms')}>
               <Text style={styles.buttonText1}>Add</Text>
             </TouchableOpacity>
           </ImageBackground>
