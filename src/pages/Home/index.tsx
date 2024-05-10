@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   ScrollView,
   Linking,
+  Pressable,
 } from 'react-native';
 import {PageHeader} from '../../components/molecules';
 
@@ -82,49 +83,49 @@ const Home = ({navigation}) => {
             </TouchableOpacity>
           </ImageBackground>
         </View>
-        <View style={{flex: 1, marginTop: -10}}>
+        <View style={{marginTop: -10}}>
           <View style={styles.tBoxContainer}>
             <Text style={styles.textBox1}>News</Text>
           </View>
-          <TouchableOpacity
-            onPress={() =>
-              Linking.openURL(
-                'https://www.cnnindonesia.com/nasional/20240321151712-20-1077248/tpst-ngurah-rai-denpasar-ditutup-karena-tak-mampu-olah-sampah-lagi',
-              )
-            }>
-            <View style={styles.boxContainer}>
+          <View style={styles.boxContainer}>
+            <Pressable
+              onPress={() =>
+                Linking.openURL(
+                  'https://www.cnnindonesia.com/nasional/20240321151712-20-1077248/tpst-ngurah-rai-denpasar-ditutup-karena-tak-mampu-olah-sampah-lagi',
+                )
+              }>
               <Image
-                style={styles.imgBox1}
+                style={styles.imgBox}
                 source={require('../../assets/images/imgBox1.png')}
               />
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() =>
-              Linking.openURL(
-                'https://www.cnnindonesia.com/nasional/20240318155255-20-1075759/muara-sungai-pantai-dreamland-bali-tertutup-sampah-100-ton',
-              )
-            }>
-            <View style={styles.boxContainer2}>
+            </Pressable>
+          </View>
+          <View style={styles.boxContainer2}>
+            <Pressable
+              onPress={() =>
+                Linking.openURL(
+                  'https://www.cnnindonesia.com/nasional/20240318155255-20-1075759/muara-sungai-pantai-dreamland-bali-tertutup-sampah-100-ton',
+                )
+              }>
               <Image
-                style={styles.imgBox1}
+                style={styles.imgBox}
                 source={require('../../assets/images/imgBox2.png')}
               />
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() =>
-              Linking.openURL(
-                'https://www.cnnindonesia.com/ekonomi/20240313150613-625-1073817/neutradc-dukung-pengelolaan-sampah-di-desa-jambidan-yogyakarta',
-              )
-            }>
-            <View style={styles.boxContainer3}>
+            </Pressable>
+          </View>
+          <View style={styles.boxContainer3}>
+            <Pressable
+              onPress={() =>
+                Linking.openURL(
+                  'https://www.cnnindonesia.com/ekonomi/20240313150613-625-1073817/neutradc-dukung-pengelolaan-sampah-di-desa-jambidan-yogyakarta',
+                )
+              }>
               <Image
-                style={styles.imgBox1}
+                style={styles.imgBox}
                 source={require('../../assets/images/imgBox3.png')}
               />
-            </View>
-          </TouchableOpacity>
+            </Pressable>
+          </View>
         </View>
       </View>
     </ScrollView>
@@ -319,11 +320,12 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: 'black',
   },
-  imgBox1: {
+  imgBox: {
     width: '100%',
     height: '100%',
     borderRadius: 16,
   },
+
   num: {
     textAlign: 'center',
     fontSize: 20,
