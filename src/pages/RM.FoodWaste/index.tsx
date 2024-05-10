@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View, ScrollView, Image} from 'react-native';
+import {StyleSheet, Text, View, ScrollView} from 'react-native';
 import React from 'react';
 import {Button, PageHeader, Gap} from '../../components';
 
