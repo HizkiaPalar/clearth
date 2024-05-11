@@ -20,6 +20,7 @@ import {
   RM_Glass,
   RM_Metal,
   Profile,
+  ProfileFormat,
 } from '../pages';
 
 const Stack = createNativeStackNavigator();
@@ -119,6 +120,11 @@ const index = () => {
       <Stack.Screen
         name="Profile"
         component={Profile}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="ProfileFormat"
+        component={ProfileFormat}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

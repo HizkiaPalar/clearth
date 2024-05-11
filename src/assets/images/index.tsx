@@ -10,6 +10,7 @@ import img_Plastic from './img_Plastic.png';
 import img_Glass from './img_Glass.png';
 import img_Metal from './img_Metal.png';
 import Profile from './Profile.png';
+import UserPhoto from './UserPhoto.png';
 
 export {
   Logo2,
@@ -24,4 +25,5 @@ export {
   img_Glass,
   img_Metal,
   Profile,
+  UserPhoto,
 };
