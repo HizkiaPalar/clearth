@@ -21,6 +21,7 @@ import {
   RM_Metal,
   Profile,
   ProfileFormat,
+  Addphoto,
 } from '../pages';
 
 const Stack = createNativeStackNavigator();
@@ -125,6 +126,11 @@ const index = () => {
       <Stack.Screen
         name="ProfileFormat"
         component={ProfileFormat}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Addphoto"
+        component={Addphoto}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

@@ -11,6 +11,9 @@ import img_Glass from './img_Glass.png';
 import img_Metal from './img_Metal.png';
 import Profile from './Profile.png';
 import UserPhoto from './UserPhoto.png';
+import Report from './Report.png';
+import Tps from './Tps.png';
+import Sum from './Sum.png';
 
 export {
   Logo2,
@@ -26,4 +29,7 @@ export {
   img_Metal,
   Profile,
   UserPhoto,
+  Tps,
+  Report,
+  Sum,
 };
