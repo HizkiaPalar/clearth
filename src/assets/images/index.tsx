@@ -1,11 +1,4 @@
 import Logo2 from './Logo2.png';
-import Add from './Add.png';
-import Min from './min.png';
-import Plus from './plus.png';
-import Arrow from './Arrow.png';
-import Line from './Line.png';
-import Star from './Star.png';
-import Profile from './Profile.png';
 import Metals from './Metals.png';
 import Leafes from './Leafes.png';
 import Plastic from './Plastic.png';
@@ -16,8 +9,7 @@ import img_FoodWaste from './img_FoodWaste.png';
 import img_Plastic from './img_Plastic.png';
 import img_Glass from './img_Glass.png';
 import img_Metal from './img_Metal.png';
-import Report from './Report.png';
-import Tps from './Tps.png';
+import Profile from './Profile.png';
 
 export {
   Logo2,
@@ -31,13 +23,5 @@ export {
   img_Plastic,
   img_Glass,
   img_Metal,
-  Add,
-  Min,
-  Plus,
-  Arrow,
-  Line,
-  Star,
   Profile,
-  Report,
-  Tps,
 };

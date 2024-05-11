@@ -1,10 +1,13 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
+  AddSchedule,
+  Home,
+  Reporting,
   SplashScreen,
   SignIn,
   SignUp,
-  Home,
+  Schedule,
   Education,
   NatureWaste,
   FoodWaste,
@@ -16,6 +19,7 @@ import {
   RM_Plastic,
   RM_Glass,
   RM_Metal,
+  Profile,
 } from '../pages';
 
 const Stack = createNativeStackNavigator();
@@ -40,6 +44,21 @@ const index = () => {
       <Stack.Screen
         name="Home"
         component={Home}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Schedule"
+        component={Schedule}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Reporting"
+        component={Reporting}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="AddSchedule"
+        component={AddSchedule}
         options={{headerShown: false}}
       />
       <Stack.Screen
@@ -95,6 +114,11 @@ const index = () => {
       <Stack.Screen
         name="RM_Metal"
         component={RM_Metal}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Profile"
+        component={Profile}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

@@ -75,8 +75,4 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
   },
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> e2435ae85cdf1140d53860c2eaf4540a2b1910a8

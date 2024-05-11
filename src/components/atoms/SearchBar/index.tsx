@@ -1,4 +1,4 @@
-import {StyleSheet, Text, TextInput, View} from 'react-native';
+import {StyleSheet, TextInput, View} from 'react-native';
 import React from 'react';
 import {SearchIcon} from '../../../assets/icon';
 
@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
     marginLeft: 64,
     borderRadius: 10,
     paddingLeft: 15,
+    top: 8,
   },
   icon: {
     marginTop: 6,

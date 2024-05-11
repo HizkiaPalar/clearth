@@ -1,4 +1,11 @@
-import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+} from 'react-native';
 import React from 'react';
 import {Gap, PageHeader} from '../../components';
 import {
@@ -18,57 +25,59 @@ const Education = ({navigation}) => {
         backButton={true}
         onPress={() => navigation.goBack()}
       />
-      <Gap height={60} />
-      <Text style={styles.heading1}>CATEGORIES</Text>
-      <Gap height={6} />
-      <View style={styles.bgcontainer1}>
-        <Text style={styles.heading2}>ORGANIC</Text>
-      </View>
-      <Gap height={7} />
-      <View style={styles.bgcontainer2}>
-        <Gap height={17} />
-        <TouchableOpacity onPress={() => navigation.navigate('NatureWaste')}>
-          <View style={styles.bgcontainer3}>
-            <Image source={Leafes} style={styles.image1} />
-            <Text style={styles.heading3}> Nature Waste </Text>
-          </View>
-        </TouchableOpacity>
-        <Gap height={5} />
-        <TouchableOpacity onPress={() => navigation.navigate('FoodWaste')}>
-          <View style={styles.bgcontainer3}>
-            <Image source={FoodWaste} style={styles.image2} />
-            <Text style={styles.heading3}> Food Waste </Text>
-          </View>
-        </TouchableOpacity>
-      </View>
-      <Gap height={50} />
-      <View style={styles.bg2container1}>
-        <Text style={styles.heading2}>NON ORGANIC</Text>
-      </View>
-      <Gap height={7} />
-      <View style={styles.bg2container2}>
-        <Gap height={17} />
-        <TouchableOpacity onPress={() => navigation.navigate('Plastic')}>
-          <View style={styles.bgcontainer3}>
-            <Image source={Plastic} style={styles.image1} />
-            <Text style={styles.heading3_2}> Plastic </Text>
-          </View>
-        </TouchableOpacity>
-        <Gap height={5} />
-        <TouchableOpacity onPress={() => navigation.navigate('Glass')}>
-          <View style={styles.bgcontainer3}>
-            <Image source={BrokenGlass} style={styles.image2} />
-            <Text style={styles.heading3_2}> Glass </Text>
-          </View>
-        </TouchableOpacity>
-        <Gap height={5} />
-        <TouchableOpacity onPress={() => navigation.navigate('Metal')}>
-          <View style={styles.bgcontainer3}>
-            <Image source={Metals} style={styles.image3} />
-            <Text style={styles.heading3_2}> Metal </Text>
-          </View>
-        </TouchableOpacity>
-      </View>
+      <ScrollView>
+        <Gap height={60} />
+        <Text style={styles.heading1}>CATEGORIES</Text>
+        <Gap height={6} />
+        <View style={styles.bgcontainer1}>
+          <Text style={styles.heading2}>ORGANIC</Text>
+        </View>
+        <Gap height={7} />
+        <View style={styles.bgcontainer2}>
+          <Gap height={17} />
+          <TouchableOpacity onPress={() => navigation.navigate('NatureWaste')}>
+            <View style={styles.bgcontainer3}>
+              <Image source={Leafes} style={styles.image1} />
+              <Text style={styles.heading3}> Nature Waste </Text>
+            </View>
+          </TouchableOpacity>
+          <Gap height={5} />
+          <TouchableOpacity onPress={() => navigation.navigate('FoodWaste')}>
+            <View style={styles.bgcontainer3}>
+              <Image source={FoodWaste} style={styles.image2} />
+              <Text style={styles.heading3}> Food Waste </Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+        <Gap height={50} />
+        <View style={styles.bg2container1}>
+          <Text style={styles.heading2}>NON ORGANIC</Text>
+        </View>
+        <Gap height={7} />
+        <View style={styles.bg2container2}>
+          <Gap height={17} />
+          <TouchableOpacity onPress={() => navigation.navigate('Plastic')}>
+            <View style={styles.bgcontainer3}>
+              <Image source={Plastic} style={styles.image1} />
+              <Text style={styles.heading3_2}> Plastic </Text>
+            </View>
+          </TouchableOpacity>
+          <Gap height={5} />
+          <TouchableOpacity onPress={() => navigation.navigate('Glass')}>
+            <View style={styles.bgcontainer3}>
+              <Image source={BrokenGlass} style={styles.image2} />
+              <Text style={styles.heading3_2}> Glass </Text>
+            </View>
+          </TouchableOpacity>
+          <Gap height={5} />
+          <TouchableOpacity onPress={() => navigation.navigate('Metal')}>
+            <View style={styles.bgcontainer3}>
+              <Image source={Metals} style={styles.image3} />
+              <Text style={styles.heading3_2}> Metal </Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
     </View>
   );
 };

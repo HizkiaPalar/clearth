@@ -1,9 +1,10 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {Button} from '../../atoms';
 import {Logo2} from '../../../assets/images';
 import SearchBar from '../../atoms/SearchBar';
-
+import {Profile} from '../../../assets/images';
+import {useNavigation} from '@react-navigation/native';
 const PageHeader = ({
   label,
   label2,
@@ -14,6 +15,8 @@ const PageHeader = ({
   onPress,
   type,
 }) => {
+  const navigation = useNavigation();
+
   if (type === 'withPhoto') {
     return (
       <View style={styles.containerWithPhoto}>
@@ -80,6 +83,9 @@ const PageHeader = ({
         <Image source={Logo2} style={styles.image} />
         <View style={styles.sb}>
           <SearchBar />
+          <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
+            <Image source={Profile} style={styles.image2} />
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -100,25 +106,25 @@ export default PageHeader;
 
 const styles = StyleSheet.create({
   containerWithPhoto: {
-    backgroundColor: '#c3ffae',
     paddingHorizontal: 24,
     paddingVertical: 10,
     alignItems: 'center',
     flexDirection: 'row',
+    backgroundColor: '#c3ffae',
   },
   container: {
     backgroundColor: '#c3ffae',
     paddingLeft: 24,
-    paddingVertical: 20,
+    paddingVertical: 40,
     flexDirection: 'row',
     alignItems: 'center',
-    marginLeft: -10,
+    marginLeft: -20,
   },
   label: {
-    fontFamily: 'Poppins-SemiBold',
+    fontFamily: 'Poppins-Medium',
     fontSize: 20,
     color: '#020202',
-    left: 110,
+    paddingLeft: 115,
   },
   label2: {
     fontFamily: 'Poppins-SemiBold',
@@ -148,6 +154,13 @@ const styles = StyleSheet.create({
     width: 82,
     height: 75,
     marginLeft: -25,
+    left: 10,
+  },
+  image2: {
+    width: 80,
+    height: 60,
+    marginLeft: 235,
+    bottom: 45,
   },
   appTitle: {
     fontFamily: 'Poppins-Medium',
@@ -158,6 +171,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 80,
   },
   sb: {
+    top: 30,
     width: '50%',
   },
 });
