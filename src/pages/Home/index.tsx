@@ -7,6 +7,8 @@ import {
   ImageBackground,
   TouchableOpacity,
   ScrollView,
+  Linking,
+  Pressable,
 } from 'react-native';
 import {PageHeader} from '../../components/molecules';
 
@@ -19,7 +21,7 @@ const Home = ({navigation}) => {
         </View>
         <View style={styles.contentContainer}>
           <View style={styles.tcontainer}>
-            <Text style={styles.theader1}>Hey, Riana!</Text>
+            <Text style={styles.theader1}>Hi, Everyone!</Text>
             <Text style={styles.theader2}>Save our planet, start</Text>
             <Text style={styles.theader3}>sorting your waste </Text>
           </View>
@@ -62,7 +64,7 @@ const Home = ({navigation}) => {
             <Text style={styles.textImagebottom}>forget !</Text>
             <TouchableOpacity
               style={styles.buttonContainer}
-              onPress={() => navigation.navigate('Schedule')}>
+              onPress={() => navigation.navigate('Alarms')}>
               <Text style={styles.buttonText1}>Add</Text>
             </TouchableOpacity>
           </ImageBackground>
@@ -81,18 +83,48 @@ const Home = ({navigation}) => {
             </TouchableOpacity>
           </ImageBackground>
         </View>
-        <View style={{flex: 1, marginTop: -10}}>
+        <View style={{marginTop: -10}}>
           <View style={styles.tBoxContainer}>
             <Text style={styles.textBox1}>News</Text>
           </View>
           <View style={styles.boxContainer}>
-            <Text style={styles.textBox}>Tittle</Text>
+            <Pressable
+              onPress={() =>
+                Linking.openURL(
+                  'https://www.cnnindonesia.com/nasional/20240321151712-20-1077248/tpst-ngurah-rai-denpasar-ditutup-karena-tak-mampu-olah-sampah-lagi',
+                )
+              }>
+              <Image
+                style={styles.imgBox}
+                source={require('../../assets/images/imgBox1.png')}
+              />
+            </Pressable>
           </View>
           <View style={styles.boxContainer2}>
-            <Text style={styles.textBox}>Tittle</Text>
+            <Pressable
+              onPress={() =>
+                Linking.openURL(
+                  'https://www.cnnindonesia.com/nasional/20240318155255-20-1075759/muara-sungai-pantai-dreamland-bali-tertutup-sampah-100-ton',
+                )
+              }>
+              <Image
+                style={styles.imgBox}
+                source={require('../../assets/images/imgBox2.png')}
+              />
+            </Pressable>
           </View>
           <View style={styles.boxContainer3}>
-            <Text style={styles.textBox}>Tittle</Text>
+            <Pressable
+              onPress={() =>
+                Linking.openURL(
+                  'https://www.cnnindonesia.com/ekonomi/20240313150613-625-1073817/neutradc-dukung-pengelolaan-sampah-di-desa-jambidan-yogyakarta',
+                )
+              }>
+              <Image
+                style={styles.imgBox}
+                source={require('../../assets/images/imgBox3.png')}
+              />
+            </Pressable>
           </View>
         </View>
       </View>
@@ -288,6 +320,12 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: 'black',
   },
+  imgBox: {
+    width: '100%',
+    height: '100%',
+    borderRadius: 16,
+  },
+
   num: {
     textAlign: 'center',
     fontSize: 20,
