@@ -84,7 +84,15 @@ const ProfileFormat = ({navigation}) => {
             <View style={styles.thirdContainer}>
               <TouchableOpacity
                 style={styles.submitChangeButton}
-                onPress={onSubmit}>
+                onPress={onSubmit}
+                onPress={() => navigation.navigate('Profile')}
+                onPressIn={() => {
+                  showMessage({
+                    message: 'Data diperbaharui',
+                    type: 'success',
+                    duration: 3000,
+                  }); 
+                }}>
                 <Text style={styles.submitChangeText}>Submit change</Text>
               </TouchableOpacity>
             </View>

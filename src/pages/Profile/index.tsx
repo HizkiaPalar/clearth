@@ -4,11 +4,17 @@ import {PageHeader} from '../../components';
 import {Image} from 'react-native-elements';
 import Location from '../../assets/icon/Location.svg';
 import Phone from '../../assets/icon/Phone Ringing.svg';
+import {UserPhoto} from '../../assets/images';
 
 const Profile = ({navigation}) => {
   return (
     <View style={styles.background}>
-      <PageHeader type="withPhoto" label="PROFILE" backButton={true} onPress={() => navigation.goBack()}/>
+      <PageHeader
+        type="withPhoto"
+        label="PROFILE"
+        backButton={true}
+        onPress={() => navigation.goBack()}
+      />
       <View style={styles.cardContainer}>
         <View style={styles.card}>
           <View style={styles.sectionOne}>
@@ -17,7 +23,7 @@ const Profile = ({navigation}) => {
               style={styles.profilePic}
             />
             <View>
-              <Text style={styles.greet}>Hey, Riana!</Text>
+              <Text style={styles.greet}>Hey, Jane doe</Text>
               <View style={styles.locContainer}>
                 <Location style={styles.location} />
                 <Text style={styles.locText}>Manado, Sulawesi Utara</Text>
@@ -40,7 +46,9 @@ const Profile = ({navigation}) => {
           </View>
         </View>
       </View>
-      <TouchableOpacity style={styles.logOutButton}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('SignIn')}
+        style={styles.logOutButton}>
         <Text style={styles.logOutText}>Log Out</Text>
       </TouchableOpacity>
       <View style={styles.line} />
