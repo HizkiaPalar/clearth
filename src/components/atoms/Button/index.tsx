@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   label: textColor => ({
     textAlign: 'center',
     fontFamily: 'Poppins-Medium',
-    fontSize: 14,
+    fontSize: 20,
     color: textColor,
   }),
 });
