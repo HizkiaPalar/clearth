@@ -5,7 +5,7 @@ import { Sum } from '../../assets/images';
 import { launchImageLibrary } from 'react-native-image-picker';
 import { showMessage } from 'react-native-flash-message';
 
-const Addphoto = () => {
+const Addphoto = ({navigation}) => {
   const [photo, setPhoto] = useState(Sum);
 
   const getImage = async () => {
@@ -26,7 +26,6 @@ const Addphoto = () => {
       const base64 = `data:${assets.type};base64,${assets.base64}`;
       setPhoto({ uri: base64 });
     }
-    console.log(base64)
   };
 
   return (
@@ -36,7 +35,7 @@ const Addphoto = () => {
         <Image source={photo} style={styles.image} />
       </TouchableOpacity>
       <Gap height={30} />
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity onPress ={()=> navigation.navigate('Reporting')} style={styles.button}>
         <Text style={styles.buttonText}>POST</Text>
       </TouchableOpacity>
     </View>
