@@ -17,6 +17,8 @@ import RM_Plastic from './RM.Plastic';
 import RM_Glass from './RM.Glass';
 import RM_Metal from './RM.Metal';
 import Addphoto from './Addphoto';
+import Profile from './Profile';
+import ProfileFormat from './ProfileFormat';
 
 export {
   AddSchedule,
@@ -37,5 +39,7 @@ export {
   RM_Plastic,
   RM_Glass,
   RM_Metal,
+  Profile,
+  ProfileFormat,
   Addphoto,
 };

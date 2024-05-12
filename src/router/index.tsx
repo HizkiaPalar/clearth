@@ -1,5 +1,4 @@
 import React from 'react';
-import {Text, TouchableOpacity, StyleSheet} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
   AddSchedule,
@@ -117,6 +116,16 @@ const index = () => {
       <Stack.Screen
         name="RM_Metal"
         component={RM_Metal}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Profile"
+        component={Profile}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="ProfileFormat"
+        component={ProfileFormat}
         options={{headerShown: false}}
       />
       <Stack.Screen
