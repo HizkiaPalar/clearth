@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
-import { Gap } from '../../components'; 
+import { Gap, PageHeader } from '../../components'; 
 import { Sum } from '../../assets/images';
 import { launchImageLibrary } from 'react-native-image-picker';
 import { showMessage } from 'react-native-flash-message';
@@ -10,8 +10,8 @@ const Addphoto = ({navigation}) => {
 
   const getImage = async () => {
     const result = await launchImageLibrary({
-      maxHeight: 300,
-      maxWidth: 300,
+      maxHeight: 400,
+      maxWidth: 400,
       quality: 10,
       includeBase64: true,
     });
@@ -28,22 +28,34 @@ const Addphoto = ({navigation}) => {
     }
   };
 
+  const onSubmit = () => {
+    showMessage({
+      message: 'Foto report berhasil dikirim',
+      type: 'success',
+      duration: 4000,
+    });
+    navigation.navigate('Reporting');
+  };
+
   return (
-    <View style={styles.container}>
+    <View>
+      <PageHeader type="withPhoto" backButton={false} label="REPORTING"/>
       <Gap height={58} />
-      <TouchableOpacity activeOpacity={0.7} onPress={getImage}>
-        <Image source={photo} style={styles.image} />
-      </TouchableOpacity>
-      <Gap height={30} />
-      <TouchableOpacity onPress ={()=> navigation.navigate('Reporting')} style={styles.button}>
-        <Text style={styles.buttonText}>POST</Text>
-      </TouchableOpacity>
+      <View style={styles.content}>
+        <TouchableOpacity activeOpacity={0.7} onPress={getImage}>
+          <Image source={photo} style={styles.image} />
+        </TouchableOpacity>
+        <Gap height={30} />
+        <TouchableOpacity onPressIn={onSubmit} style={styles.button}>
+          <Text style={styles.buttonText}>POST</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
+  content: {
     alignItems: 'center',
   },
   image: {
