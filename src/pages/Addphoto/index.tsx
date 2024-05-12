@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
-import { Gap } from '../../components'; // Menghapus PageHeader dari import
+import { Gap } from '../../components'; 
 import { Sum } from '../../assets/images';
 import { launchImageLibrary } from 'react-native-image-picker';
 import { showMessage } from 'react-native-flash-message';
@@ -10,7 +10,7 @@ const Addphoto = ({navigation}) => {
 
   const getImage = async () => {
     const result = await launchImageLibrary({
-      maxHeight: 233,
+      maxHeight: 300,
       maxWidth: 300,
       quality: 10,
       includeBase64: true,
