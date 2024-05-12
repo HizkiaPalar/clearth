@@ -63,7 +63,7 @@ const ProfileFormat = ({navigation}) => {
             <View style={styles.thirdContainer}>
               <TouchableOpacity
                 style={styles.submitChangeButton}
-                onPress={() => navigation.navigate('ProfileFormat')}>
+                onPress={() => navigation.navigate('Profile')}>
                 <Text style={styles.submitChangeText}>Submit change</Text>
               </TouchableOpacity>
             </View>
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
   card: {
     backgroundColor: '#62FAD1',
     width: 393,
-    height: 163,
+    height: 263,
     alignItems: 'center',
     paddingTop: 10,
   },
@@ -175,8 +175,8 @@ const styles = StyleSheet.create({
     height: 490,
     marginTop: 20,
     paddingTop: 20,
-    borderTopLeftRadius: 15,
-    borderTopRightRadius: 15,
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
     backgroundColor: '#FAFCF9',
     elevation: 10,
     padding: 10,
