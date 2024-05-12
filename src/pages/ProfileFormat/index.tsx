@@ -1,14 +1,20 @@
-import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
-import {PageHeader, TextInput} from '../../components';
+import {PageHeader, TextInput, Gap} from '../../components';
 import Location from '../../assets/icon/Location.svg';
 import Phone from '../../assets/icon/Phone Ringing.svg';
 import {UserPhoto} from '../../assets/images';
 import {launchImageLibrary} from 'react-native-image-picker';
 import {showMessage} from 'react-native-flash-message';
+import {Input} from 'react-native-elements';
+import {Image} from 'react-native-elements';
 
 const ProfileFormat = ({navigation}) => {
   const [photo, setPhoto] = useState(UserPhoto);
+  const [photoForDB, setPhotoForDB] = useState('');
+  const [fullName, setFullName] = useState('');
+  const [location, setLocation] = useState('');
+  const [mobileNumber, setMobileNumber] = useState('');
 
   const getImage = async () => {
     const result = await launchImageLibrary({
@@ -27,6 +33,7 @@ const ProfileFormat = ({navigation}) => {
       const assets = result.assets[0];
       const base64 = `data:${assets.type};base64,${assets.base64}`;
       setPhoto({uri: base64});
+      setPhotoForDB(base64);
     }
   };
 
@@ -40,21 +47,29 @@ const ProfileFormat = ({navigation}) => {
       />
       <View style={styles.cardContainer}>
         <View style={styles.card}>
-          <View style={styles.sectionOne}>
-            <TouchableOpacity style={styles.changePhotoButton} activeOpacity={0.5} onPress={getImage}>
-              <Image source={photo} style={styles.avatar} />
-            </TouchableOpacity>
-          </View>
-          <View style={styles.sectionTwo}>
-            <TouchableOpacity style={styles.changeDataButton}>
-              <Text style={styles.changeDataText}>Submit Data</Text>
-            </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.changePhotoButton}
+            activeOpacity={0.5}
+            onPress={getImage}>
+            <Image source={photo} style={styles.avatar} />
+          </TouchableOpacity>
+          <View style={styles.secondContainer}>
+            <Gap height={12} />
+            <TextInput label="Full Name" placeholder="Enter Your Name"/>
+            <Gap height={12} />
+            <TextInput label="Address" placeholder="Enter Your Name"/>
+            <Gap height={12} />
+            <TextInput label="Mobile Number" placeholder="Enter Your Name"/>
+            <View style={styles.thirdContainer}>
+              <TouchableOpacity
+                style={styles.submitChangeButton}
+                onPress={() => navigation.navigate('ProfileFormat')}>
+                <Text style={styles.submitChangeText}>Submit change</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
       </View>
-      {/* <TouchableOpacity style={styles.logOutButton}>
-        <Text style={styles.logOutText}>Log Out</Text>
-      </TouchableOpacity> */}
     </View>
   );
 };
@@ -67,10 +82,32 @@ const styles = StyleSheet.create({
     flex: 1,
     fontFamily: 'Poppins-Medium',
   },
-  changePhotoButton :{
-    borderStyle: 'dashed',
+  submitChangeButton: {
+    backgroundColor: '#7e7e7e',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 337,
+    height: 38,
+    borderRadius: 15,
+    marginTop: 20,
+    opacity: 0.8,
+  },
+  submitChangeText: {
+    fontFamily: 'Poppins-Medium',
+    color: '#11170F',
+  },
+  thirdContainer: {
+    alignItems: 'center',
+  },
+  changePhotoButton: {
+    backgroundColor: '#FAFCF9',
     borderRadius: 100,
-
+    width: 120,
+    height: 120,
+    alignItems: 'center',
+    justifyContent: 'center',
+    elevation: 10,
+    opacity: 0.75,
   },
   greet: {
     fontFamily: 'Poppins-Medium',
@@ -81,15 +118,14 @@ const styles = StyleSheet.create({
   },
   card: {
     backgroundColor: '#62FAD1',
-    width: 333,
-    height: 233,
-    borderRadius: 15,
-    paddingBottom: 119,
-    elevation: 10,
+    width: 393,
+    height: 163,
+    alignItems: 'center',
+    paddingTop: 10,
   },
   cardContainer: {
     alignItems: 'center',
-    paddingTop: 75,
+    justifyContent: 'center',
   },
   profilePic: {
     width: 194,
@@ -125,57 +161,24 @@ const styles = StyleSheet.create({
   phoneContainer: {
     flexDirection: 'row',
   },
-  changeDataButton: {
-    backgroundColor: '#ffffff',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: 137,
-    height: 38,
-    borderRadius: 15,
-    opacity: 0.75,
-    marginLeft: 169,
-    marginTop: 50,
-  },
-  changePassButton: {
-    backgroundColor: '#ffffff',
-    justifyContent: 'center',
-    width: 196,
-    height: 38,
-    borderRadius: 15,
-    marginTop: 6,
-    opacity: 0.75,
-  },
   sectionOne: {
     alignItems: 'center',
-    marginTop: 23,
-  },
-  sectionTwo: {
-    paddingTop: 16,
-    paddingLeft: 16,
-  },
-  changeDataText: {
-    color: '#000000',
-    fontSize: 15,
-    fontFamily: 'Poppins-Medium',
-  },
-  changePassText: {
-    color: '#000000',
-    fontSize: 15,
-    paddingLeft: 16,
-    fontFamily: 'Poppins-Medium',
-  },
-  logOutText: {
-    color: '#000000',
-    fontFamily: 'Poppins-SemiBold',
-    textDecorationLine: 'underline',
-  },
-  logOutButton: {
-    paddingTop: 259,
-    paddingLeft: 43,
+    backgroundColor: 'black',
   },
   avatar: {
-    height: 90,
-    width: 90,
-    borderRadius: 90 / 2,
+    height: 110,
+    width: 110,
+    borderRadius: 110 / 2,
+  },
+  secondContainer: {
+    width: 393,
+    height: 490,
+    marginTop: 20,
+    paddingTop: 20,
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
+    backgroundColor: '#FAFCF9',
+    elevation: 10,
+    padding: 10,
   },
 });

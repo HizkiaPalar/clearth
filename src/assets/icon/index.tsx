@@ -1,4 +1,6 @@
 import Logo from './Logo.svg';
 import BackButton from './BackButton.svg';
 import SearchIcon from './searchIcon.svg';
-export {Logo, BackButton, SearchIcon};
+import CameraIcon from './CameraIcon.svg';
+
+export {Logo, BackButton, CameraIcon, SearchIcon};
