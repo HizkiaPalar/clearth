@@ -21,7 +21,7 @@ const Home = ({navigation}) => {
         </View>
         <View style={styles.contentContainer}>
           <View style={styles.tcontainer}>
-            <Text style={styles.theader1}>Hi, Everyone!</Text>
+            <Text style={styles.theader1}>Hi, Guys!</Text>
             <Text style={styles.theader2}>Save our planet, start</Text>
             <Text style={styles.theader3}>sorting your waste </Text>
           </View>
@@ -64,7 +64,7 @@ const Home = ({navigation}) => {
             <Text style={styles.textImagebottom}>forget !</Text>
             <TouchableOpacity
               style={styles.buttonContainer}
-              onPress={() => navigation.navigate('Alarms')}>
+              onPress={() => navigation.navigate('Schedule')}>
               <Text style={styles.buttonText1}>Add</Text>
             </TouchableOpacity>
           </ImageBackground>
