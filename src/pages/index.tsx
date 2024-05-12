@@ -16,8 +16,6 @@ import RM_FoodWaste from './RM.FoodWaste';
 import RM_Plastic from './RM.Plastic';
 import RM_Glass from './RM.Glass';
 import RM_Metal from './RM.Metal';
-import Profile from './Profile';
-import ProfileFormat from './ProfileFormat';
 import Addphoto from './Addphoto';
 
 export {
@@ -39,7 +37,5 @@ export {
   RM_Plastic,
   RM_Glass,
   RM_Metal,
-  Profile,
-  ProfileFormat,
   Addphoto,
 };

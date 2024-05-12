@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Medium',
     fontSize: 20,
     color: '#020202',
-    paddingLeft: 115,
+    paddingLeft: 105,
   },
   label2: {
     fontFamily: 'Poppins-SemiBold',

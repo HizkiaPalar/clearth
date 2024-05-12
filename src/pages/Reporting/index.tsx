@@ -18,74 +18,72 @@ const Reporting = ({navigation}) => {
         backButton={true}
         onPress={() => navigation.goBack()}
       />
-      <ScrollView>
+      <Image
+        source={require('../../assets/images/Tps.png')}
+        style={styles.imgTps}
+      />
+      <View style={styles.containerImg}>
         <Image
-          source={require('../../assets/images/Tps.png')}
-          style={styles.imgTps}
+          source={require('../../assets/images/Mp.png')}
+          style={styles.imgPin}
         />
-        <View style={styles.containerImg}>
-          <Image
-            source={require('../../assets/images/Mp.png')}
-            style={styles.imgPin}
-          />
-          <Text style={styles.textNum}>1.480699,124.857406</Text>
-          <Image
-            source={require('../../assets/images/Mm.png')}
-            style={styles.imgMarker}
-          />
-        </View>
-        <View style={styles.containerBox}>
-          <Text style={styles.textReport}>REPORTED ILLEGAL BINS</Text>
-          <View style={styles.boxCoordinate}>
-            <Image source={require('../../assets/images/Report.png')} />
-            <View style={styles.textBox1}>
-              <Text style={styles.cp}>COORDINATE POINTS</Text>
-              <Text style={styles.ci}>CHECK IT</Text>
-            </View>
-            <View style={styles.textBox2}>
-              <Image
-                source={require('../../assets/images/Mp.png')}
-                style={styles.pin2}
-              />
-              <Text style={styles.textNum2}>1.480699,124.857406</Text>
-              <Image
-                source={require('../../assets/images/Mm.png')}
-                style={styles.marker2}
-              />
-            </View>
+        <Text style={styles.textNum}>1.480699,124.857406</Text>
+        <Image
+          source={require('../../assets/images/Mm.png')}
+          style={styles.imgMarker}
+        />
+      </View>
+      <View style={styles.containerBox}>
+        <Text style={styles.textReport}>REPORTED ILLEGAL BINS</Text>
+        <View style={styles.boxCoordinate}>
+          <Image source={require('../../assets/images/Report.png')} />
+          <View style={styles.textBox1}>
+            <Text style={styles.cp}>COORDINATE POINTS</Text>
+            <Text style={styles.ci}>CHECK IT</Text>
           </View>
-          <View style={styles.boxCoordinate2}>
+          <View style={styles.textBox2}>
             <Image
-              source={require('../../assets/images/Report.png')}
-              style={styles.box2}
+              source={require('../../assets/images/Mp.png')}
+              style={styles.pin2}
             />
-            <View style={styles.textBox3}>
-              <Text style={styles.cp}>COORDINATE POINTS</Text>
-              <Text style={styles.ci}>CHECK IT</Text>
-            </View>
-            <View style={styles.textBox4}>
-              <Image
-                source={require('../../assets/images/Mp.png')}
-                style={styles.pin2}
-              />
-              <Text style={styles.textNum2}>1.480699,124.857406</Text>
-              <Image
-                source={require('../../assets/images/Mm.png')}
-                style={styles.marker2}
-              />
-            </View>
-            <Text style={styles.Lp}>LETS REPORT IT!</Text>
-            <View style={styles.boxCoordinate3}>
-              <TouchableOpacity onPress={() => navigation.navigate('Addphoto')}>
-                <Image
-                  source={require('../../assets/images/Add.png')}
-                  style={styles.add}
-                />
-              </TouchableOpacity>
-            </View>
+            <Text style={styles.textNum2}>1.480699,124.857406</Text>
+            <Image
+              source={require('../../assets/images/Mm.png')}
+              style={styles.marker2}
+            />
           </View>
         </View>
-      </ScrollView>
+        <View style={styles.boxCoordinate2}>
+          <Image
+            source={require('../../assets/images/Report.png')}
+            style={styles.box2}
+          />
+          <View style={styles.textBox3}>
+            <Text style={styles.cp}>COORDINATE POINTS</Text>
+            <Text style={styles.ci}>CHECK IT</Text>
+          </View>
+          <View style={styles.textBox4}>
+            <Image
+              source={require('../../assets/images/Mp.png')}
+              style={styles.pin2}
+            />
+            <Text style={styles.textNum2}>1.480699,124.857406</Text>
+            <Image
+              source={require('../../assets/images/Mm.png')}
+              style={styles.marker2}
+            />
+          </View>
+          <Text style={styles.Lp}>LETS REPORT IT!</Text>
+          <View style={styles.boxCoordinate3}>
+            <TouchableOpacity onPress={() => navigation.navigate('Addphoto')}>
+              <Image
+                source={require('../../assets/images/Add.png')}
+                style={styles.add}
+              />
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
     </View>
   );
 };

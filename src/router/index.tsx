@@ -120,16 +120,6 @@ const index = () => {
         options={{headerShown: false}}
       />
       <Stack.Screen
-        name="Profile"
-        component={Profile}
-        options={{headerShown: false}}
-      />
-      <Stack.Screen
-        name="ProfileFormat"
-        component={ProfileFormat}
-        options={{headerShown: false}}
-      />
-      <Stack.Screen
         name="Addphoto"
         component={Addphoto}
         options={{headerShown: false}}
