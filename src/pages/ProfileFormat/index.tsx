@@ -1,19 +1,16 @@
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
 import {PageHeader, TextInput, Gap} from '../../components';
-import Location from '../../assets/icon/Location.svg';
-import Phone from '../../assets/icon/Phone Ringing.svg';
 import {UserPhoto} from '../../assets/images';
 import {launchImageLibrary} from 'react-native-image-picker';
 import {showMessage} from 'react-native-flash-message';
-import {Input} from 'react-native-elements';
 import {Image} from 'react-native-elements';
 
 const ProfileFormat = ({navigation}) => {
   const [photo, setPhoto] = useState(UserPhoto);
   const [photoForDB, setPhotoForDB] = useState('');
   const [fullName, setFullName] = useState('');
-  const [location, setLocation] = useState('');
+  const [address, setAddress] = useState('');
   const [mobileNumber, setMobileNumber] = useState('');
 
   const getImage = async () => {
@@ -26,7 +23,7 @@ const ProfileFormat = ({navigation}) => {
 
     if (result.didCancel) {
       showMessage({
-        message: 'Ups',
+        message: 'Anda belum memilih foto',
         type: 'danger',
       });
     } else {
@@ -35,6 +32,15 @@ const ProfileFormat = ({navigation}) => {
       setPhoto({uri: base64});
       setPhotoForDB(base64);
     }
+  };
+  const onSubmit = () => {
+    const data = {
+      fullName: fullName,
+      address: address,
+      mobileNumber: mobileNumber,
+      photo: photoForDB,
+    };
+    console.log(data);
   };
 
   return (
@@ -55,15 +61,30 @@ const ProfileFormat = ({navigation}) => {
           </TouchableOpacity>
           <View style={styles.secondContainer}>
             <Gap height={12} />
-            <TextInput label="Full Name" placeholder="Enter Your Name"/>
+            <TextInput
+              label="Full Name"
+              value={fullName}
+              onChangeText={value => setFullName(value)}
+              placeholder="Enter your name"
+            />
             <Gap height={12} />
-            <TextInput label="Address" placeholder="Enter Your Name"/>
+            <TextInput
+              label="Address"
+              value={address}
+              onChangeText={value => setAddress(value)}
+              placeholder="Enter your address"
+            />
             <Gap height={12} />
-            <TextInput label="Mobile Number" placeholder="Enter Your Name"/>
+            <TextInput
+              label="Mobile Number"
+              value={mobileNumber}
+              onChangeText={value => setMobileNumber(value)}
+              placeholder="Enter your mobile number"
+            />
             <View style={styles.thirdContainer}>
               <TouchableOpacity
                 style={styles.submitChangeButton}
-                onPress={() => navigation.navigate('Profile')}>
+                onPress={onSubmit}>
                 <Text style={styles.submitChangeText}>Submit change</Text>
               </TouchableOpacity>
             </View>
