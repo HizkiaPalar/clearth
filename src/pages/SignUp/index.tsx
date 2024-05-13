@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   View,
@@ -7,8 +7,42 @@ import {
   Text,
 } from 'react-native';
 import {Gap, PageHeader, TextInput} from '../../components';
+import {getAuth, createUserWithEmailAndPassword} from 'firebase/auth';
+import {showMessage} from 'react-native-flash-message';
+import {getDatabase, ref, set} from 'firebase/database';
 
 const SignUp = ({navigation}) => {
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const onSubmit = () => {
+    const data = {
+      fullName: fullName,
+      email: email,
+      password: password,
+    };
+    const auth = getAuth();
+    const db = getDatabase();
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(userCredential => {
+        // Signed up
+        const user = userCredential.user;
+        set(ref(db, 'users/' + user.uid), data);
+        showMessage({
+          message: 'Registrasi berhasil, silahkan login',
+          type: 'success',
+        });
+        navigation.navigate('SignIn');
+      })
+      .catch(error => {
+        const errorMessage = error.message;
+        showMessage({
+          message: errorMessage,
+          type: 'danger',
+        });
+      });
+  };
   return (
     <ScrollView style={styles.container}>
       <PageHeader
@@ -20,30 +54,29 @@ const SignUp = ({navigation}) => {
       <Gap height={24} />
       <View style={styles.contentWrapper}>
         <Gap height={24} />
-        <TextInput label="First Name" placeholder="Type your first name" />
-        <Gap height={24} />
-        <TextInput label="Last Name" placeholder="Type your last name" />
+        <TextInput
+          label="Full Name"
+          placeholder="Type your full name"
+          value={fullName}
+          onChangeText={value => setFullName(value)}
+        />
         <Gap height={24} />
         <TextInput
-          label="Email or Phone Number"
-          placeholder="Type your email or phone number"
+          label="Email"
+          placeholder="Type your email"
+          value={email}
+          onChangeText={value => setEmail(value)}
         />
         <Gap height={24} />
         <TextInput
           label="Password"
           placeholder="Type your password"
-          secureTextEntry
-        />
-        <Gap height={24} />
-        <TextInput
-          label="Confirm Password"
-          placeholder="Confirm password"
-          secureTextEntry
+          value={password}
+          onChangeText={value => setPassword(value)}
+          secureTextEntry={true}
         />
         <Gap height={32} />
-        <TouchableOpacity
-          style={styles.signUpButton}
-          onPress={() => navigation.navigate('SignIn')}>
+        <TouchableOpacity style={styles.signUpButton} onPress={onSubmit}>
           <Text style={styles.signUpButtonText}>Sign Up</Text>
         </TouchableOpacity>
         <Gap height={24} />
