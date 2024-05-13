@@ -17,7 +17,7 @@ const ProfileFormat = ({navigation}) => {
     const result = await launchImageLibrary({
       maxHeight: 100,
       maxWidth: 100,
-      quality: 0.5,
+      quality: 10,
       includeBase64: true,
     });
 

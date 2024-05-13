@@ -40,9 +40,6 @@ const Profile = ({navigation}) => {
               onPress={() => navigation.navigate('ProfileFormat')}>
               <Text style={styles.changeDataText}>Change Data</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.changePassButton}>
-              <Text style={styles.changePassText}>Change Password</Text>
-            </TouchableOpacity>
           </View>
         </View>
       </View>

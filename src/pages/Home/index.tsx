@@ -78,7 +78,7 @@ const Home = ({navigation}) => {
             <Text style={styles.textImagebottom}>around you !</Text>
             <TouchableOpacity
               style={styles.buttonContainer}
-              onPress={() => navigation.navigate('Reporting')}>
+              onPress={() => navigation.navigate('Reporting', {uid: user.uid})}>
               <Text style={styles.buttonText1}>Report</Text>
             </TouchableOpacity>
           </ImageBackground>
@@ -88,7 +88,7 @@ const Home = ({navigation}) => {
             <Text style={styles.textBox1}>News</Text>
           </View>
           <View style={styles.boxContainer}>
-            <Pressable
+            <TouchableOpacity
               onPress={() =>
                 Linking.openURL(
                   'https://www.cnnindonesia.com/nasional/20240321151712-20-1077248/tpst-ngurah-rai-denpasar-ditutup-karena-tak-mampu-olah-sampah-lagi',
@@ -98,10 +98,10 @@ const Home = ({navigation}) => {
                 style={styles.imgBox}
                 source={require('../../assets/images/imgBox1.png')}
               />
-            </Pressable>
+            </TouchableOpacity>
           </View>
           <View style={styles.boxContainer2}>
-            <Pressable
+            <TouchableOpacity
               onPress={() =>
                 Linking.openURL(
                   'https://www.cnnindonesia.com/nasional/20240318155255-20-1075759/muara-sungai-pantai-dreamland-bali-tertutup-sampah-100-ton',
@@ -111,10 +111,10 @@ const Home = ({navigation}) => {
                 style={styles.imgBox}
                 source={require('../../assets/images/imgBox2.png')}
               />
-            </Pressable>
+            </TouchableOpacity>
           </View>
           <View style={styles.boxContainer3}>
-            <Pressable
+            <TouchableOpacity
               onPress={() =>
                 Linking.openURL(
                   'https://www.cnnindonesia.com/ekonomi/20240313150613-625-1073817/neutradc-dukung-pengelolaan-sampah-di-desa-jambidan-yogyakarta',
@@ -124,7 +124,7 @@ const Home = ({navigation}) => {
                 style={styles.imgBox}
                 source={require('../../assets/images/imgBox3.png')}
               />
-            </Pressable>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
